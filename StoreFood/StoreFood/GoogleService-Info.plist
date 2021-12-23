@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>948996980911-cfhg42kl6omc6tnku32u0kcdicm1mqnm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.948996980911-cfhg42kl6omc6tnku32u0kcdicm1mqnm</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCqbNo59NzH4GYp6rN5ThmxpNEcCm9Vvi4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>948996980911</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>kholod.com.StoreFood</string>
+	<key>PROJECT_ID</key>
+	<string>storefood-76150</string>
+	<key>STORAGE_BUCKET</key>
+	<string>storefood-76150.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:948996980911:ios:9a64efbbe7601ffbadd45a</string>
+</dict>
+</plist>
