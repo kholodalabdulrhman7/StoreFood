@@ -23,10 +23,20 @@ struct Cake {
 var cakes:Array<Cake> = []
 var purchasedProducts:Array<Cake> = []
 var cartArr:[Cake] = []
+
 var alliimage:Array<Cake> = [
-]
+    
+    
+        ]
+
+var allimage: Array<Cake>=[
+    
+    
+    
+    ]
 
 struct Category {
     var image:UIImage?
     var name:String?
 }
+

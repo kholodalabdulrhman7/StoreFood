@@ -127,9 +127,11 @@ class WelcomScreen: UIViewController {
     @objc private func loginButtonTapped() {
         navigationController?.pushViewController(LoginScreen(), animated: true)
     }
+    
     @objc private func signInButtonTapped() {
         navigationController?.pushViewController(SignupScreen(), animated: true)
     }
+    
     private func isUserSignedIn() -> Bool {
       return Auth.auth().currentUser != nil
     }
