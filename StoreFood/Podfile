@@ -15,5 +15,7 @@ pod 'Firebase/Core'
   pod 'Firebase/Storage'
   pod 'DropDown'
   pod 'SwipeCellKit'
+ pod 'ActionSheetPicker-3.0'
+  pod 'JGProgressHUD'
 
 end

@@ -7,6 +7,7 @@
 
 
 import UIKit
+import JGProgressHUD
 
 
 class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate, UICollectionViewDelegateFlowLayout {
@@ -18,13 +19,12 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     var selectedCategoryIndex: Int?
     
     var categories: [Category] = [
-        Category(image: UIImage(named: "1"), name: NSLocalizedString("Cakes🧁", comment: "")),
-        Category(image: UIImage(named: "2"), name: NSLocalizedString("Jucies🍹", comment: "")),
-        Category(image: UIImage(named: "3"), name: NSLocalizedString("Pastries🥐", comment: ""))
-
-    ]
+        
+        var categoriesCollection:UICollectionView!
+            
+            let hud = JGProgressHUD()
     
-    var categoriesCollection: UICollectionView!
+   
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

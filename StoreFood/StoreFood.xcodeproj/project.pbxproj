@@ -13,6 +13,9 @@
 		7A8C8BC5277853A1006A9DC6 /* CategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C8BC4277853A1006A9DC6 /* CategoryCollectionCell.swift */; };
 		7A8C8BC7277853FF006A9DC6 /* TVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C8BC6277853FF006A9DC6 /* TVCell.swift */; };
 		7A8C8BC92778548D006A9DC6 /* AddProudctVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C8BC82778548D006A9DC6 /* AddProudctVC.swift */; };
+		7AAECA4427799A7F00344295 /* ClassChooseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAECA4327799A7F00344295 /* ClassChooseButton.swift */; };
+		7AAECA482779AA7A00344295 /* MenueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAECA472779AA7A00344295 /* MenueVC.swift */; };
+		7AAECA4A2779AAD800344295 /* CustomerSupportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAECA492779AAD800344295 /* CustomerSupportVC.swift */; };
 		7AC95DC927760DEA00634655 /* TabBarStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC95DC827760DEA00634655 /* TabBarStoreVC.swift */; };
 		7AC95DCB27760E1700634655 /* ShowStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC95DCA27760E1700634655 /* ShowStoreVC.swift */; };
 		7AC95DCD27760E2F00634655 /* TikTokVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC95DCC27760E2F00634655 /* TikTokVC.swift */; };
@@ -40,6 +43,9 @@
 		7A8C8BC4277853A1006A9DC6 /* CategoryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionCell.swift; sourceTree = "<group>"; };
 		7A8C8BC6277853FF006A9DC6 /* TVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCell.swift; sourceTree = "<group>"; };
 		7A8C8BC82778548D006A9DC6 /* AddProudctVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProudctVC.swift; sourceTree = "<group>"; };
+		7AAECA4327799A7F00344295 /* ClassChooseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassChooseButton.swift; sourceTree = "<group>"; };
+		7AAECA472779AA7A00344295 /* MenueVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenueVC.swift; sourceTree = "<group>"; };
+		7AAECA492779AAD800344295 /* CustomerSupportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerSupportVC.swift; sourceTree = "<group>"; };
 		7AC95DC827760DEA00634655 /* TabBarStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarStoreVC.swift; sourceTree = "<group>"; };
 		7AC95DCA27760E1700634655 /* ShowStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowStoreVC.swift; sourceTree = "<group>"; };
 		7AC95DCC27760E2F00634655 /* TikTokVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokVC.swift; sourceTree = "<group>"; };
@@ -150,6 +156,9 @@
 				7AC95DD227760E9500634655 /* ProfileVC.swift */,
 				7A8C8BBE277851DE006A9DC6 /* DetialsVC.swift */,
 				7A8C8BC82778548D006A9DC6 /* AddProudctVC.swift */,
+				7AAECA4327799A7F00344295 /* ClassChooseButton.swift */,
+				7AAECA472779AA7A00344295 /* MenueVC.swift */,
+				7AAECA492779AAD800344295 /* CustomerSupportVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -291,8 +300,10 @@
 				7ADC16B9277460A300BAC296 /* WelcomScreen.swift in Sources */,
 				7AC95DD127760E7800634655 /* CartVC.swift in Sources */,
 				7A8C8BC7277853FF006A9DC6 /* TVCell.swift in Sources */,
+				7AAECA4427799A7F00344295 /* ClassChooseButton.swift in Sources */,
 				7ADC16CF2774892B00BAC296 /* SignupScreen.swift in Sources */,
 				7AC95DCB27760E1700634655 /* ShowStoreVC.swift in Sources */,
+				7AAECA482779AA7A00344295 /* MenueVC.swift in Sources */,
 				7AC95DCF27760E6300634655 /* DonateVC.swift in Sources */,
 				7A8C8BC12778523F006A9DC6 /* FireBaseOperations.swift in Sources */,
 				7ADC16CB277483A900BAC296 /* SetUpButton-Textfiled.swift in Sources */,
@@ -304,6 +315,7 @@
 				7A8C8BC5277853A1006A9DC6 /* CategoryCollectionCell.swift in Sources */,
 				7ADC16B7277460A300BAC296 /* SceneDelegate.swift in Sources */,
 				7AC95DC927760DEA00634655 /* TabBarStoreVC.swift in Sources */,
+				7AAECA4A2779AAD800344295 /* CustomerSupportVC.swift in Sources */,
 				7ADC16CD277487E900BAC296 /* LoginScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

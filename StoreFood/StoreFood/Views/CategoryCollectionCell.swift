@@ -7,20 +7,21 @@
 
 import UIKit
 
-
-class CategoriesCollectionViewCell:UICollectionViewCell {
+class CategoriesCollectionViewCell: UICollectionViewCell {
     static let ID = "categoriesCollectionCell"
     
     private let imageView : UIImageView = {
-        let image = UIImageView()
-        image.contentMode = .scaleAspectFit
+        let image           = UIImageView()
+        
+        image.contentMode   = .scaleAspectFill
         image.clipsToBounds = true
         return image
     }()
-    private let name :UILabel = {
-        let title = UILabel ()
-        title.textColor = UIColor.label
-        title.font = UIFontMetrics.default.scaledFont(for:UIFont.systemFont(ofSize: 15, weight: .regular))
+    
+    private let name : UILabel = {
+        let title = UILabel()
+        title.textColor =  UIColor.label
+        title.font = UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: 15, weight: .regular))
         return title
     }()
     
@@ -29,23 +30,33 @@ class CategoriesCollectionViewCell:UICollectionViewCell {
         setupCell()
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")}
+    required init?(coder: NSCoder){fatalError("init(coder:) has not been implemented")}
+    
     override func layoutSubviews() {
         setupSizeForCellContent()
     }
-    func sertCell(category:Category) {
-        imageView.image = category.image
+    
+    func sertCell(category: Category) {
+        
+        let url = URL(string: category.image )
+        if let u = url {
+            let data = try? Data(contentsOf: u)
+            self.imageView.image = UIImage(data: data!)
+        }
+        
         name.text = category.name
     }
-    private func setupCell (){
+    
+    
+    private func setupCell() {
         self.backgroundColor = .white
         self.addSubview(imageView)
         self.addSubview(name)
         self.layer.cornerRadius = 13
         self.layer.masksToBounds = true
     }
-    private func  setupSizeForCellContent() {
+    
+    private func setupSizeForCellContent() {
         imageView.frame = CGRect(x: 10, y: (self.frame.size.height / 2) - 15, width: 30, height: 30)
         imageView.layer.cornerRadius = 15
         
@@ -54,6 +65,3 @@ class CategoriesCollectionViewCell:UICollectionViewCell {
     }
     
 }
-    
-
-

@@ -86,8 +86,14 @@ class CollectionCell: UICollectionViewCell {
         
         name.text = card.name
         summary.text = card.summary
-        price.text = card.price + " SAR"
         cookby.text = card.cookby
+        
+        print("this is price:\(card.price)")
+        if card.price != "" {
+            price.text = card.price + "SAR"
+        }else{
+            price.text = "Donate"
+        }
         
         
     }
