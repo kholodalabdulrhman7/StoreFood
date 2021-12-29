@@ -6,9 +6,10 @@
 //
 
 
-import UIKit
-import JGProgressHUD
 
+import UIKit
+import ActionSheetPicker_3_0
+import JGProgressHUD
 
 class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate, UICollectionViewDelegateFlowLayout {
     
@@ -18,23 +19,24 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     var selectedCategoryIndex: Int?
     
-    var categories: [Category] = [
-        
-        var categoriesCollection:UICollectionView!
-            
-            let hud = JGProgressHUD()
+    var categoriesData: [Category] = []
     
-   
+    var categoriesCollection: UICollectionView!
+    
+    let hud = JGProgressHUD()
+    
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == categoriesCollection {
-            return categories.count
+            return categoriesData.count
         } else {
+            
             return isFilter ? filteredData.count : products.count
 
         }
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -43,9 +45,18 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
                 return UICollectionViewCell()
             }
             
-            cell.sertCell(category: categories[indexPath.row])
+            cell.sertCell(category: categoriesData[indexPath.row])
+            
+            if let index = selectedCategoryIndex, index == indexPath.row {
+                cell.backgroundColor = UIColor( #colorLiteral(red: 0.1595600843, green: 0.810018003, blue: 0.7768369317, alpha: 1))
+                
+            } else {
+                cell.backgroundColor = UIColor.white
+            }
             
          return cell
+            
+            
         }else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionCell.ID, for: indexPath) as? CollectionCell else {
                 return UICollectionViewCell()
@@ -109,7 +120,9 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == categoriesCollection {
-            
+            self.selectedCategoryIndex = indexPath.row
+            self.categoriesCollection.reloadData()
+            getProducts(categroyId: self.categoriesData[indexPath.row].uid)
         } else {
             let vc = DetailVC()
             
@@ -127,56 +140,56 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     
     
-        var collectionView: UICollectionView!
+    var collectionView: UICollectionView!
     lazy var searchBar:UISearchBar = UISearchBar()
-
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            
-            
-            if #available(iOS 15, *) {
-                    let appearance = UINavigationBarAppearance()
-                    appearance.configureWithOpaqueBackground()
-//                    appearance.backgroundColor = < your tint color >
-                    navigationController?.navigationBar.standardAppearance = appearance;
-                    navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
-                }
-            
-
-            
-            getCurrentUserFromFirestore { type in
-                print("the user type is \(type)")
-                if type == "1" {
-                    self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.addTapped))
-                }
-            }
-            
-            configureCollectionView()
-            
-            view.backgroundColor = UIColor.systemGray6
-            self.title = "Cakes"
-            self.navigationItem.largeTitleDisplayMode = .always
-            
-            searchBar.searchBarStyle = UISearchBar.Style.default
-            searchBar.placeholder = " Search..."
-            searchBar.sizeToFit()
-            searchBar.isTranslucent = false
-            searchBar.backgroundImage = UIImage()
-            searchBar.delegate = self
-            navigationItem.titleView = searchBar
-            
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        if #available(iOS 15, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            //                    appearance.backgroundColor = < your tint color >
+            navigationController?.navigationBar.standardAppearance = appearance;
+            navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
         }
+        
+        
+        
+        getCurrentUserFromFirestore { type in
+            print("the user type is \(type)")
+            if type == "1" {
+                self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.addTapped(_:)))
+            }
+        }
+        
+        configureCollectionView()
+        
+        view.backgroundColor = UIColor.systemGray6
+        
+        self.title = "Cakes"
+        self.navigationItem.largeTitleDisplayMode = .always
+        
+        searchBar.searchBarStyle = UISearchBar.Style.default
+        searchBar.placeholder = " Search..."
+        searchBar.sizeToFit()
+        searchBar.isTranslucent = false
+        searchBar.backgroundImage = UIImage()
+        searchBar.delegate = self
+        navigationItem.titleView = searchBar
+        
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.getData()
-
+        
     }
     
-    @objc func addTapped() {
-        let vc = AddProductViewController()
-        
-        self.navigationController?.pushViewController(vc, animated: true)
+    @objc func addTapped(_ sender: UIBarButtonItem) {
+    
+        showAddTypePicker(sender)
     }
     
     
@@ -196,15 +209,49 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     
     func getData() {
-        self.getProducts { products in
-            self.products = products
-            self.collectionView.reloadData()
+        getCategories()
+    }
+    
+    private func getCategories() {
+        hud.textLabel.text = "Loading"
+        hud.show(in: self.view)
+        
+        db.collection("categories").getDocuments { (snapshot, err) in
+            if let error = err {
+                print("error getting documents \(error)")
+            } else {
+                var categories:[Category] = []
+               
+                for document in snapshot!.documents {
+//                    let docId = document.documentID
+                    let name = document.get("name") as! String
+                    let image = document.get("image") as! String
+                    let uid = document.get("uid") as! String
+
+                    let category = Category(image: image, name: name, uid: uid)
+                    categories.append(category)
+                }
+                
+                self.categoriesData = categories
+                self.categoriesCollection.reloadData()
+                
+                
+                if self.categoriesData.count > 0 {
+                    self.selectedCategoryIndex = 0
+                    self.categoriesCollection.reloadData()
+                    self.getProducts(categroyId: self.categoriesData[0].uid)
+                }
+            }
+            
         }
     }
     
     
-    private func getProducts(completion: @escaping([Cake])->()) {
-        db.collection("products").whereField("type", isEqualTo: "0").getDocuments { (snapshot, err) in
+    private func getProducts(categroyId: String) {
+        hud.textLabel.text = "Loading"
+        hud.show(in: self.view)
+        
+        db.collection("products").whereField("type", isEqualTo: "0").whereField("categoryId", isEqualTo: categroyId).getDocuments { (snapshot, err) in
             if let error = err {
                 print("error getting documents \(error)")
             } else {
@@ -221,7 +268,16 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
                     let product = Cake(name: name, summary: summary, price: price, image: image, cookby: cookby, uid: docId)
                     products.append(product)
                 }
-                completion(products)
+                
+                self.products = products
+                if self.products.count == 0 {
+                    self.showEmptyText(isShow: true)
+                } else {
+                    self.showEmptyText(isShow: false)
+                }
+                
+                self.hud.dismiss()
+                self.collectionView.reloadData()
             }
             
         }
@@ -242,6 +298,8 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         let viewForCollection = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 60))
         viewForCollection.backgroundColor = .clear
         categoriesCollection = UICollectionView(frame: CGRect.zero, collectionViewLayout: CategoriesLayout())
+        categoriesCollection.showsHorizontalScrollIndicator = false
+
         view.addSubview(viewForCollection)
         view.addSubview(collectionView)
         viewForCollection.addSubview(categoriesCollection)
@@ -322,6 +380,38 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         
         return layout
     }
+    
+    
+    func showAddTypePicker(_ sender: UIBarButtonItem) {
+     
+        ActionSheetStringPicker.show(withTitle: "Choose adding type", rows: ["Add Category", "Add Product"], initialSelection: 0, doneBlock: { picker, index, values in
+          
+            if index == 0 {
+                let vc = AddCategoryViewController()
+                self.navigationController?.pushViewController(vc, animated: true)
+        
+            } else {
+                let vc = AddProductViewController()
+                self.navigationController?.pushViewController(vc, animated: true)
+        
+            }
+            
+        }, cancel: { ActionMultipleStringCancelBlock in return }, origin: sender)
+        
+    }
+    
+    func showEmptyText(isShow: Bool) {
+        let emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
+              emptyLabel.text = "Sorry, There is no products"
+        emptyLabel.textAlignment = .center
+        
+        if isShow {
+            self.collectionView.backgroundView = emptyLabel
+        } else {
+            self.collectionView.backgroundView = nil
+        }
+    }
+    
     
     }
 

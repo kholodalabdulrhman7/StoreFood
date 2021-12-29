@@ -75,6 +75,7 @@ class CollectionCell: UICollectionViewCell {
     override func layoutSubviews() {
         setupSizeForCellContent()
     }
+    
     func setCell(card:Cake){
         imageView.contentMode = .scaleAspectFill
         
@@ -87,15 +88,14 @@ class CollectionCell: UICollectionViewCell {
         name.text = card.name
         summary.text = card.summary
         cookby.text = card.cookby
-        
-        print("this is price:\(card.price)")
-        if card.price != "" {
-            price.text = card.price + "SAR"
-        }else{
+
+        print("this is price: \(card.price)")
+        if  card.price != "" {
+            price.text = card.price + " SAR"
+        } else {
             price.text = "Donate"
         }
-        
-        
+    
     }
     private func setupSizeForCellContent() {
         imageView.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height / 2.5)
@@ -151,7 +151,4 @@ extension UIView {
         layer.backgroundColor =  backgroundCGColor
     }
 }
-
-
-
 

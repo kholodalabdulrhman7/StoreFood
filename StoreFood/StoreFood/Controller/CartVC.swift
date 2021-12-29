@@ -6,8 +6,10 @@
 //
 
 
+
 import UIKit
 import FirebaseAuth
+import JGProgressHUD
 
 class CartViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
@@ -17,6 +19,9 @@ class CartViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var productsData: [Cake] = []
     var docIds: [String] = []
 
+    let hud = JGProgressHUD()
+
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.productsData.count
     }
@@ -161,9 +166,13 @@ class CartViewController: UIViewController, UICollectionViewDelegate, UICollecti
  
     private func getCartProducts() {
         self.productsData.removeAll()
+        self.hud.show(in: self.view)
+        hud.textLabel.text = "Loading"
+        
         db.collection("cart").whereField("userId", isEqualTo: Auth.auth().currentUser?.uid ?? "").getDocuments { (snapshot, err) in
             if let error = err {
                 print("error getting documents \(error)")
+                self.hud.dismiss()
             } else {
                 var ids:[String] = []
                 
@@ -180,6 +189,8 @@ class CartViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 
                 if ids.count > 0 {
                     self.getProducts(ids: ids)
+                }else {
+                    self.hud.dismiss()
                 }
 
             }
@@ -210,7 +221,7 @@ class CartViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 DispatchQueue.main.async {
                     self.productsData.append(contentsOf: products)
                     self.collectionView.reloadData()
-
+                    self.hud.dismiss()
                 }
             }
             
@@ -218,8 +229,4 @@ class CartViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
 }
-
-
-
-
 

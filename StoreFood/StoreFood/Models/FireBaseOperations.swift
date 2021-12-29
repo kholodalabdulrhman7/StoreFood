@@ -13,12 +13,13 @@ import FirebaseAuth
 
 let db = Firestore.firestore()
 
+
 func getCurrentUserFromFirestore(completion: @escaping(String)->()) {
    let docRef = db.collection("profiles").document(Auth.auth().currentUser?.uid ?? "")
     
     docRef.getDocument { (document, error) in
         if let document = document, document.exists {
-          
+           // /Users/kholodsultan/BakeryCake/BakeryCake/Models/FireBaseOperation.swift
             let type = document.get("type") as? String
             
             print(type ?? "")
@@ -61,12 +62,10 @@ func uploadImage(image: UIImage, completion: @escaping (_ url: String?) -> Void)
 //                print("Error writing document: \(err)")
 //            } else {
 //                print("Document successfully written!")
-//              //  self.successMessage()
+//                self.successMessage()
 //            }
 //        }
 //
 //    }
 //
 //}
-
-

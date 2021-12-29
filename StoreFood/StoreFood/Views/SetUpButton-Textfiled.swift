@@ -7,10 +7,9 @@
 
 import Foundation
 import UIKit
-
 extension UIButton {
   open func setupButton(with title: String) {
-      backgroundColor = .black
+    backgroundColor = .black
     setTitle(title, for: .normal)
     setTitleColor(UIColor(#colorLiteral(red: 0.727360785, green: 0.9017360806, blue: 0.8943203092, alpha: 1)), for: .normal)
     layer.cornerRadius = 20
@@ -22,6 +21,11 @@ extension UIButton {
       layer.borderColor = UIColor( #colorLiteral(red: 0.727360785, green: 0.9017360806, blue: 0.8943203092, alpha: 1)).cgColor
   }
 }
+
+
+
+
+
 
 extension UITextField {
     

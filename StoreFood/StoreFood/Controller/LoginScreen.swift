@@ -16,7 +16,7 @@ class LoginScreen: UIViewController {
     
     let containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(  #colorLiteral(red: 0.6816496253, green: 0.8040371537, blue: 0.8295541406, alpha: 1))
+        view.backgroundColor = UIColor(#colorLiteral(red: 0.6816496253, green: 0.8040371537, blue: 0.8295541406, alpha: 1))
         view.layer.borderWidth = 0.25
         view.layer.borderColor = UIColor.white.cgColor
         view.layer.cornerRadius = 20
@@ -27,9 +27,8 @@ class LoginScreen: UIViewController {
     let illustrationImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "signup")
-        image.contentMode = .scaleToFill
+        image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
-        image.layer.cornerRadius = 50
         return image
     }()
     
@@ -37,8 +36,8 @@ class LoginScreen: UIViewController {
         let title = UILabel()
         title.backgroundColor = .clear
         title.text = NSLocalizedString("Welcome back!", comment: "")
-        title.font = UIFont.systemFont(ofSize: 29, weight: .medium)
-        title.textColor = .black
+        title.font = UIFont.systemFont(ofSize: 29, weight: .bold)
+        title.textColor = UIColor(#colorLiteral(red: 0.9175770879, green: 0.7899500132, blue: 0.8629837036, alpha: 1))
         title.textAlignment = .center
         title.numberOfLines = 0
         return title
@@ -130,10 +129,10 @@ class LoginScreen: UIViewController {
         
         containerView.addSubview(illustrationImage)
         
-        illustrationImage.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: -15).isActive             = true
+        illustrationImage.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: 0).isActive             = true
         illustrationImage.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20).isActive     = true
         illustrationImage.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20).isActive  = true
-        illustrationImage.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 15).isActive             = true
+        illustrationImage.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 0).isActive             = true
         
     }
     
@@ -197,14 +196,14 @@ class LoginScreen: UIViewController {
                         print("Document successfully written!")
                     }
                 }
-//                
-//                let vc = StoreTabBar()
-//                let nav = UINavigationController()
-//                nav.viewControllers = [vc]
-//                nav.modalPresentationStyle = .fullScreen
-//                nav.modalTransitionStyle = .flipHorizontal
-//                self.present(nav, animated: true, completion: nil)
-//                
+                
+                let vc = StoreTabBar()
+                let nav = UINavigationController()
+                nav.viewControllers = [vc]
+                nav.modalPresentationStyle = .fullScreen
+                nav.modalTransitionStyle = .flipHorizontal
+                self.present(nav, animated: true, completion: nil)
+                
 //       self.navigationController?.pushViewController(StoreTabBar(),animated: true)
 
 //                self.navigationController?.popToRootViewController(animated: true)
@@ -228,5 +227,4 @@ extension LoginScreen: UITextFieldDelegate {
         return true
     }
 }
-
 

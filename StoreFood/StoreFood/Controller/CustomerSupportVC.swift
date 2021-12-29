@@ -8,17 +8,20 @@
 import UIKit
 import FirebaseFirestore
 
-class CustomerSupportViewController:UIViewController, UITextFieldDelegate{
+class CustomerSupportViewController:UIViewController{
+    
     let db = Firestore.firestore()
     
     let titleTextField:UITextField = {
         let textField = UITextField ()
+        
         textField.placeholder = "Message Title"
         textField.font = UIFont.systemFont(ofSize: 15)
         textField.borderStyle = UITextField.BorderStyle.roundedRect
         textField.autocorrectionType = UITextAutocorrectionType.no
         textField.returnKeyType = UIReturnKeyType.done
         textField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+        return textField
     }()
     let messageTextView:UITextView = {
         let textField = UITextView ()

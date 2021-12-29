@@ -5,12 +5,15 @@
 //  Created by Kholod Sultan on 20/05/1443 AH.
 //
 import UIKit
+import JGProgressHUD
 
 class DonateViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var collectionView: UICollectionView!
 
     var products: [Cake] = []
+    
+    let hud = JGProgressHUD()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,12 +39,16 @@ class DonateViewController: UIViewController, UICollectionViewDelegate, UICollec
     func getData() {
         self.getProducts { products in
             self.products = products
+            self.hud.dismiss()
             self.collectionView.reloadData()
         }
     }
     
     
     private func getProducts(completion: @escaping([Cake])->()) {
+        hud.textLabel.text = "Loading"
+        hud.show(in: self.view)
+        
         db.collection("products").whereField("type", isEqualTo: "1").getDocuments { (snapshot, err) in
             if let error = err {
                 print("error getting documents \(error)")
@@ -129,4 +136,3 @@ class DonateViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
 
 }
-

@@ -4,7 +4,6 @@
 //
 //  Created by Kholod Sultan on 22/05/1443 AH.
 //
-
 import UIKit
 import FirebaseFirestore
 import FirebaseAuth
@@ -160,7 +159,6 @@ class DetailVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     func addProductToCart() {
         self.db.collection("cart").document().setData([
             "userId": Auth.auth().currentUser?.uid ?? "",
-//            "productId": FieldValue.arrayUnion([cake?.uid ?? ""]),
             "productId": cake?.uid ?? "",
         ]) { err in
             if let err = err {
