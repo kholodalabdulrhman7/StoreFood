@@ -34,7 +34,7 @@ class WelcomeScreen: UIViewController {
         title.backgroundColor = .clear
         title.text = NSLocalizedString( "Welcome", comment: "")
         title.font = UIFont.systemFont(ofSize: 29, weight: .bold)
-        title.textColor = UIColor(#colorLiteral(red: 0.906963408, green: 0.7648715973, blue: 0.9058654904, alpha: 1) )
+        title.textColor = .black
         title.textAlignment = .center
         title.numberOfLines = 0
         return title
@@ -66,13 +66,16 @@ class WelcomeScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor(#colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1) )
+        view.backgroundColor = UIColor (#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) )
+        
         setupViews()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        self.view.setNeedsLayout()
+        self.view.layoutIfNeeded()
         if isUserSignedIn() {
             self.dismiss(animated: true, completion: nil)
         }
@@ -141,4 +144,7 @@ extension String {
     
     
 }
+
+
+
 

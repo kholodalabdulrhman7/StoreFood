@@ -5,6 +5,8 @@
 //  Created by Kholod Sultan on 22/05/1443 AH.
 //
 
+
+
 import UIKit
 import FirebaseFirestore
 import FirebaseStorage
@@ -15,7 +17,10 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
     let db = Firestore.firestore()
     let dropDown = DropDown()
     var type: String?
-
+    var categoryIndex: Int?
+    
+    var categories:[Category] = []
+    
     //imagePicker For manager
     lazy var imagePicker : UIImagePickerController = {
        let imagePicker = UIImagePickerController()
@@ -34,6 +39,8 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
         
         return view
     }()
+    
+    
     // Name Product
     let nameTextField: UITextField = {
         let textField = UITextField()
@@ -82,6 +89,12 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
         return button
     }()
     
+    let categoryButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setupButton(with: NSLocalizedString("Select Category", comment: ""))
+        return button
+    }()
+    
     //Cook BY Proudct
     let cookByTextField: UITextField = {
         let textField = UITextField()
@@ -112,12 +125,13 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor.systemGray6
 
         self.navigationController?.navigationBar.topItem?.title = "Add New Product"
 
         
         setupViews()
+        getCategories()
     }
     
     @objc func addImage() {
@@ -132,9 +146,11 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
         
         uploadImage(image: self.productImage.image ?? UIImage()) { url in
             let ref = self.db.collection("products").document().documentID
+            let categoryId = self.categories[self.categoryIndex!].uid
             
             self.db.collection("products").document(ref).setData([
                 "name": self.nameTextField.text ?? "",
+                "categoryId": categoryId,
                 "summary": self.summaryTextField.text ?? "",
                 "price": self.PriceTextField.text ?? "",
                 "cookby": self.cookByTextField.text ?? "",
@@ -153,6 +169,31 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
         }
         
     }
+    
+    private func getCategories() {
+        db.collection("categories").getDocuments { (snapshot, err) in
+            if let error = err {
+                print("error getting documents \(error)")
+            } else {
+                var categories:[Category] = []
+               
+                for document in snapshot!.documents {
+//                    let docId = document.documentID
+                    let name = document.get("name") as! String
+                    let image = document.get("image") as! String
+                    let uid = document.get("uid") as! String
+
+                    let category = Category(image: image, name: name, uid: uid)
+                    categories.append(category)
+                }
+                
+                self.categories = categories
+                
+            }
+            
+        }
+    }
+    
     
     func successMessage() {
         let alert = UIAlertController(title: "نجاح", message: "تم اضافة المنتج بنجاح", preferredStyle: .alert)
@@ -200,6 +241,9 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
         typeButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(typeButton)
         
+        categoryButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(categoryButton)
+        
         let margins = view.layoutMarginsGuide
         
         let horizontalConstraint = nameTextField.topAnchor.constraint(equalTo: margins.topAnchor, constant: 30)
@@ -208,19 +252,19 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
         let heightConstraint = nameTextField.heightAnchor.constraint(equalToConstant: 45)
         
         
-        let sHorizontalConstraint = summaryTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 30)
+        let sHorizontalConstraint = summaryTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 20)
         let sVerticalConstraint = summaryTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
         let sRightConstraint = summaryTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20)
         let sHeightConstraint = summaryTextField.heightAnchor.constraint(equalToConstant: 45)
         
         
-        let pHorizontalConstraint = PriceTextField.topAnchor.constraint(equalTo: summaryTextField.bottomAnchor, constant: 30)
+        let pHorizontalConstraint = PriceTextField.topAnchor.constraint(equalTo: summaryTextField.bottomAnchor, constant: 20)
         let pVerticalConstraint = PriceTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
         let pRightConstraint = PriceTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20)
         let pHeightConstraint = PriceTextField.heightAnchor.constraint(equalToConstant: 45)
         
         
-        let ccHorizontalConstraint = cookByTextField.topAnchor.constraint(equalTo: PriceTextField.bottomAnchor, constant: 30)
+        let ccHorizontalConstraint = cookByTextField.topAnchor.constraint(equalTo: PriceTextField.bottomAnchor, constant: 20)
         let ccVerticalConstraint = cookByTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
         let ccRightConstraint = cookByTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20)
         let ccHeightConstraint = cookByTextField.heightAnchor.constraint(equalToConstant: 45)
@@ -228,7 +272,7 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
         
 
         
-        let ttHorizontalConstraint = typeButton.topAnchor.constraint(equalTo: cookByTextField.bottomAnchor, constant: 30)
+        let ttHorizontalConstraint = typeButton.topAnchor.constraint(equalTo: cookByTextField.bottomAnchor, constant: 20)
         let ttVerticalConstraint = typeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
         let ttRightConstraint = typeButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20)
         let ttHeightConstraint = typeButton.heightAnchor.constraint(equalToConstant: 45)
@@ -236,21 +280,29 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
         
         typeButton.addTarget(self, action: #selector(tapChooseMenuItem), for: .touchUpInside)
         
+        let qHorizontalConstraint = categoryButton.topAnchor.constraint(equalTo: typeButton.bottomAnchor, constant: 20)
+        let qVerticalConstraint = categoryButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
+        let qRightConstraint = categoryButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20)
+        let qHeightConstraint = categoryButton.heightAnchor.constraint(equalToConstant: 45)
         
-        let ssHorizontalConstraint = selectImageButton.topAnchor.constraint(equalTo: typeButton.bottomAnchor, constant: 30)
+        
+        categoryButton.addTarget(self, action: #selector(tapChooseCategory(_:)), for: .touchUpInside)
+        
+        
+        let ssHorizontalConstraint = selectImageButton.topAnchor.constraint(equalTo: categoryButton.bottomAnchor, constant: 20)
         let ssVerticalConstraint = selectImageButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
         let ssRightConstraint = selectImageButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20)
         let ssHeightConstraint = selectImageButton.heightAnchor.constraint(equalToConstant: 45)
         selectImageButton.addTarget(self, action: #selector(addImage), for: .touchUpInside)
         
-        let iHorizontalConstraint = productImage.topAnchor.constraint(equalTo: selectImageButton.bottomAnchor, constant: 30)
+        let iHorizontalConstraint = productImage.topAnchor.constraint(equalTo: selectImageButton.bottomAnchor, constant: 20)
         let iVerticalConstraint = productImage.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50)
         let iRightConstraint = productImage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -50)
         let iHeightConstraint = productImage.heightAnchor.constraint(equalToConstant: 100)
         
         
         
-        let addHorizontalConstraint = addProductButton.topAnchor.constraint(equalTo: productImage.bottomAnchor, constant: 30)
+        let addHorizontalConstraint = addProductButton.topAnchor.constraint(equalTo: productImage.bottomAnchor, constant: 20)
         let addVerticalConstraint = addProductButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
         let addRightConstraint = addProductButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20)
         let addHeightConstraint = addProductButton.heightAnchor.constraint(equalToConstant: 45)
@@ -259,7 +311,7 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
 
         
         
-        view.addConstraints([horizontalConstraint, verticalConstraint, rightConstraint, heightConstraint, sHorizontalConstraint, sVerticalConstraint, sRightConstraint, sHeightConstraint, pHorizontalConstraint, pVerticalConstraint, pRightConstraint, pHeightConstraint, addRightConstraint, addHeightConstraint, addVerticalConstraint, addHorizontalConstraint, ssHeightConstraint, ssRightConstraint, ssVerticalConstraint, ssHorizontalConstraint, iRightConstraint, iHeightConstraint, iVerticalConstraint, iHorizontalConstraint, ccHeightConstraint, ccHorizontalConstraint, ccVerticalConstraint, ccRightConstraint, ttRightConstraint, ttHeightConstraint, ttVerticalConstraint, ttHorizontalConstraint])
+        view.addConstraints([horizontalConstraint, verticalConstraint, rightConstraint, heightConstraint, sHorizontalConstraint, sVerticalConstraint, sRightConstraint, sHeightConstraint, pHorizontalConstraint, pVerticalConstraint, pRightConstraint, pHeightConstraint, addRightConstraint, addHeightConstraint, addVerticalConstraint, addHorizontalConstraint, ssHeightConstraint, ssRightConstraint, ssVerticalConstraint, ssHorizontalConstraint, iRightConstraint, iHeightConstraint, iVerticalConstraint, iHorizontalConstraint, ccHeightConstraint, ccHorizontalConstraint, ccVerticalConstraint, ccRightConstraint, ttRightConstraint, ttHeightConstraint, ttVerticalConstraint, ttHorizontalConstraint, qHorizontalConstraint, qRightConstraint, qHeightConstraint, qVerticalConstraint])
         
     
     }
@@ -278,6 +330,23 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
           print(index)
           self.type = "\(index)"
       }
+    }
+    
+    @objc func tapChooseCategory(_ sender: UIButton) {//3
+       
+        dropDown.dataSource = self.categories.map({$0.name})
+        dropDown.anchorView = sender //5
+        dropDown.bottomOffset = CGPoint(x: 0, y: sender.frame.size.height) //6
+        dropDown.show() //7
+        
+        
+        dropDown.selectionAction = {  (index: Int, item: String) in //8
+            
+            sender.setTitle(item, for: .normal)
+            
+            print(index)
+            self.categoryIndex = index
+        }
     }
 
 }

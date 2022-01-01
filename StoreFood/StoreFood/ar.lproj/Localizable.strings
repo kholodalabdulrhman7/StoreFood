@@ -1,0 +1,54 @@
+/* 
+  Localizble.strings
+  StoreFood
+
+  Created by Kholod Sultan on 25/05/1443 AH.
+  
+*/
+
+
+"Log in" = " تسجيل دخول " ;
+"Welcome" = "مرحبا" ;
+"share your moments with one pices Cake" = "شاركنا أجمل لحظاتك مع قطعة كيك";
+"Sign up" = "تسجيل جديد" ;
+"Creating an account." = "إنشاء حساب جديد ";
+"Create account" = "إنشاء حساب ";
+"Select type" = "نوع المستخدم ";
+"Customer" = "مستفيد";
+"Manager" = "مالك";
+"Email" = "البريد الإلكتروني";
+"Name" = "الاسم";
+"Password" = "كلمة المرور";
+"Welcome back!" = "نورتونا من جديد";
+"Email" = "البريد الإلكتروني";
+"Password" = "كلمة المرور" ;
+"Log in" = "دخول";
+"Change language" = "تغيير اللغة";
+"Profile" = "الملف الشخصي";
+"Your password is weak, please make sure it's strong." = "كلمة المرور ضعيفة ،يرجى التأكد من أنها قوية ";
+"Oops!" = "أووه";
+"are sure you typed the email correctly?" = "هل أنت متأكد من كتابة البريد الإلكتروني بشكل صحيح؟";
+"OK" = "حسنا";
+"please make sure name, email and password are not empty." = "يرجى التأكد من أن الاسم والبريد الإلكتروني وكلمة المرور ليست فارغة.";
+"email Already in use" = "البريد الاليكتروني قيد الاستخدام";
+"Change language" = "تغيير اللغة" ;
+"Choose adding type" = "اختر النوع";
+"Add Category" = "إضافة فئة";
+"Add Product" = "أضف منتج";
+"Sorry, There is no products" = "عذرا ، لا توجد منتجات" ;
+"Loading" = "جار التحميل";
+"Customer Support" = "دعم العملاء" ;
+"Message Title" = "عنوان الرسالة" ;
+"Do you whant to change language to English" = "هل تريد تغيير اللغة إلى اللغة الإنجليزية";
+"Cancel" = "إلغاء" ;
+"Do you whant to change language to Arabic" = "هل تريد تغيير اللغة إلى العربية؟";
+"Orders Number" = "عدد الطلبات" ;
+"Change appearance" = "تغيير المظهر ";
+"Settings" = "الإعدادت";
+"Yes" = "موافق";
+" Search..." = "ابحث";
+"Select Image" = "اختر الصورة";
+
+
+
+

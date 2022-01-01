@@ -18,11 +18,12 @@
 		7AAECA4A2779AAD800344295 /* CustomerSupportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAECA492779AAD800344295 /* CustomerSupportVC.swift */; };
 		7AB0DF6F277C72EF00BD7F47 /* AddCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0DF6E277C72EF00BD7F47 /* AddCategoryVC.swift */; };
 		7AB38F72277B42C100A52B8D /* MenuTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB38F71277B42C100A52B8D /* MenuTableVC.swift */; };
+		7AC8F4D0277CEFD00062E2FE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7AC8F4D2277CEFD00062E2FE /* Localizable.strings */; };
 		7AC95DC927760DEA00634655 /* StoreTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC95DC827760DEA00634655 /* StoreTabBarVC.swift */; };
 		7AC95DCB27760E1700634655 /* ShowStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC95DCA27760E1700634655 /* ShowStoreVC.swift */; };
 		7AC95DCF27760E6300634655 /* DonateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC95DCE27760E6300634655 /* DonateVC.swift */; };
 		7AC95DD127760E7800634655 /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC95DD027760E7800634655 /* CartVC.swift */; };
-		7AC95DD327760E9500634655 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC95DD227760E9500634655 /* ProfileVC.swift */; };
+		7AC95DD327760E9500634655 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC95DD227760E9500634655 /* ProfileScreen.swift */; };
 		7ADC16B5277460A300BAC296 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADC16B4277460A300BAC296 /* AppDelegate.swift */; };
 		7ADC16B7277460A300BAC296 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADC16B6277460A300BAC296 /* SceneDelegate.swift */; };
 		7ADC16B9277460A300BAC296 /* WelcomScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADC16B8277460A300BAC296 /* WelcomScreen.swift */; };
@@ -49,11 +50,14 @@
 		7AAECA492779AAD800344295 /* CustomerSupportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerSupportVC.swift; sourceTree = "<group>"; };
 		7AB0DF6E277C72EF00BD7F47 /* AddCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryVC.swift; sourceTree = "<group>"; };
 		7AB38F71277B42C100A52B8D /* MenuTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableVC.swift; sourceTree = "<group>"; };
+		7AC8F4CD277CEF890062E2FE /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		7AC8F4D1277CEFD00062E2FE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7AC8F4D3277CEFD20062E2FE /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7AC95DC827760DEA00634655 /* StoreTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTabBarVC.swift; sourceTree = "<group>"; };
 		7AC95DCA27760E1700634655 /* ShowStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowStoreVC.swift; sourceTree = "<group>"; };
 		7AC95DCE27760E6300634655 /* DonateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateVC.swift; sourceTree = "<group>"; };
 		7AC95DD027760E7800634655 /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
-		7AC95DD227760E9500634655 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		7AC95DD227760E9500634655 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		7ADC16B1277460A300BAC296 /* StoreFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ADC16B4277460A300BAC296 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7ADC16B6277460A300BAC296 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 				7ADC16BF277460AA00BAC296 /* LaunchScreen.storyboard */,
 				7ADC16C2277460AA00BAC296 /* Info.plist */,
 				7ADC16C8277461E300BAC296 /* GoogleService-Info.plist */,
+				7AC8F4D2277CEFD00062E2FE /* Localizable.strings */,
 			);
 			path = StoreFood;
 			sourceTree = "<group>";
@@ -151,7 +156,7 @@
 				7ADC16B8277460A300BAC296 /* WelcomScreen.swift */,
 				7ADC16CC277487E900BAC296 /* LoginScreen.swift */,
 				7ADC16CE2774892B00BAC296 /* SignupScreen.swift */,
-				7AC95DD227760E9500634655 /* ProfileVC.swift */,
+				7AC95DD227760E9500634655 /* ProfileScreen.swift */,
 				7AC95DC827760DEA00634655 /* StoreTabBarVC.swift */,
 				7AC95DCA27760E1700634655 /* ShowStoreVC.swift */,
 				7AC95DCE27760E6300634655 /* DonateVC.swift */,
@@ -227,6 +232,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 7ADC16A8277460A200BAC296;
 			productRefGroup = 7ADC16B2277460A300BAC296 /* Products */;
@@ -246,6 +252,7 @@
 				7ADC16C1277460AA00BAC296 /* LaunchScreen.storyboard in Resources */,
 				7ADC16C9277461E300BAC296 /* GoogleService-Info.plist in Resources */,
 				7ADC16BE277460AA00BAC296 /* Assets.xcassets in Resources */,
+				7AC8F4D0277CEFD00062E2FE /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +318,7 @@
 				7A8C8BC12778523F006A9DC6 /* FireBaseOperations.swift in Sources */,
 				7ADC16CB277483A900BAC296 /* SetUpButton-Textfiled.swift in Sources */,
 				7A8C8BBF277851DE006A9DC6 /* DetialVC.swift in Sources */,
-				7AC95DD327760E9500634655 /* ProfileVC.swift in Sources */,
+				7AC95DD327760E9500634655 /* ProfileScreen.swift in Sources */,
 				7A8C8BC327785279006A9DC6 /* CollectionCell.swift in Sources */,
 				7ADC16B5277460A300BAC296 /* AppDelegate.swift in Sources */,
 				7A8C8BC5277853A1006A9DC6 /* CategoryCollectionCell.swift in Sources */,
@@ -327,10 +334,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		7AC8F4D2277CEFD00062E2FE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7AC8F4D1277CEFD00062E2FE /* en */,
+				7AC8F4D3277CEFD20062E2FE /* ar */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		7ADC16BF277460AA00BAC296 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				7ADC16C0277460AA00BAC296 /* Base */,
+				7AC8F4CD277CEF890062E2FE /* ar */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -342,6 +359,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -403,6 +421,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

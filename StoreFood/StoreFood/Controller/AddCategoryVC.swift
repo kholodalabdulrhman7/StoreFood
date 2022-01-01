@@ -5,6 +5,8 @@
 //  Created by Kholod Sultan on 25/05/1443 AH.
 //
 
+
+
 import UIKit
 import FirebaseFirestore
 import FirebaseStorage
@@ -53,13 +55,13 @@ class AddCategoryViewController: UIViewController, UIImagePickerControllerDelega
     // add category
     let addCategoryButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setupButton(with: "Add Category")
+        button.setupButton(with: "Add Category".localized)
         return button
     }()
     
     let selectImageButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setupButton(with: "Select Image")
+        button.setupButton(with: "Select Image".localized)
         return button
     }()
     
@@ -69,7 +71,7 @@ class AddCategoryViewController: UIViewController, UIImagePickerControllerDelega
 
         // Do any additional setup after loading the view.
         
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor.systemGray6
         self.navigationController?.navigationBar.topItem?.title = "Add New Category"
 
         setupViews()
@@ -180,4 +182,3 @@ extension AddCategoryViewController: UITextFieldDelegate {
         return true
     }
 }
-

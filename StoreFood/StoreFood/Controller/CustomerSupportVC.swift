@@ -5,15 +5,18 @@
 //  Created by Kholod Sultan on 23/05/1443 AH.
 //
 
+
+
 import UIKit
 import FirebaseFirestore
 
-class CustomerSupportViewController:UIViewController{
-    
+class CustomerSupportViewController: UIViewController {
+
     let db = Firestore.firestore()
+
     
-    let titleTextField:UITextField = {
-        let textField = UITextField ()
+    let titleTextField: UITextField = {
+        let textField = UITextField()
         
         textField.placeholder = "Message Title"
         textField.font = UIFont.systemFont(ofSize: 15)
@@ -21,55 +24,62 @@ class CustomerSupportViewController:UIViewController{
         textField.autocorrectionType = UITextAutocorrectionType.no
         textField.returnKeyType = UIReturnKeyType.done
         textField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+        
         return textField
     }()
-    let messageTextView:UITextView = {
-        let textField = UITextView ()
+    
+    let messageTextView: UITextView = {
+        let textField = UITextView()
+        
         textField.font = UIFont.systemFont(ofSize: 15)
         textField.autocorrectionType = UITextAutocorrectionType.no
         textField.returnKeyType = UIReturnKeyType.done
+        
         textField.layer.borderColor = UIColor.lightGray.cgColor
         textField.layer.borderWidth = 1
         
         return textField
     }()
     
-    let sendMessageButton:UIButton = {
+    let sendMessageButton: UIButton = {
         let button = UIButton(type: .system)
         button.setupButton(with: "Send Message")
         return button
     }()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        // Do any additional setup after loading the view.
         view.backgroundColor = .white
+
         self.navigationController?.navigationBar.topItem?.title = "Customer Support"
-        
-        
+
         if #available(iOS 15, *) {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
             navigationController?.navigationBar.standardAppearance = appearance;
             navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
         }
+        
         self.navigationController?.navigationBar.isHidden = false
+        
         setupViews()
-           
-        }
+    }
+    
     
     func setupViews() {
+        
         titleTextField.translatesAutoresizingMaskIntoConstraints = false
         titleTextField.delegate = self
         view.addSubview(titleTextField)
-        
         
         messageTextView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(messageTextView)
         
         sendMessageButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(sendMessageButton)
-        
         
         let margins = view.layoutMarginsGuide
         
@@ -132,8 +142,3 @@ extension CustomerSupportViewController: UITextFieldDelegate {
         return true
     }
 }
-
-
-
-
-

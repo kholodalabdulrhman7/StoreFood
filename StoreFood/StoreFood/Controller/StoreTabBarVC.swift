@@ -17,13 +17,13 @@ class StoreTabBar: UITabBarController {
         viewControllers = [
         
       
-            barItem(tabBarTitle:"Settings", tabBarImage: UIImage(systemName: "text.badge.plus")!.withTintColor(UIColor( #colorLiteral(red: 0.1160495952, green: 0.597653091, blue: 0.5693894625, alpha: 1)), renderingMode: .alwaysOriginal), viewController: Showstore()),
+            barItem(tabBarTitle:"Settings".localized, tabBarImage: UIImage(systemName: "text.badge.plus")!.withTintColor(UIColor( #colorLiteral(red: 0.1160495952, green: 0.597653091, blue: 0.5693894625, alpha: 1)), renderingMode: .alwaysOriginal), viewController: Showstore()),
             
             
-            barItem(tabBarTitle:"Donate", tabBarImage: UIImage(systemName: "dollarsign.square.fill")!.withTintColor(UIColor( #colorLiteral(red: 0.1160495952, green: 0.597653091, blue: 0.5693894625, alpha: 1) ), renderingMode: .alwaysOriginal), viewController:DonateViewController()),
+            barItem(tabBarTitle:"Donate".localized, tabBarImage: UIImage(systemName: "dollarsign.square.fill")!.withTintColor(UIColor( #colorLiteral(red: 0.1160495952, green: 0.597653091, blue: 0.5693894625, alpha: 1) ), renderingMode: .alwaysOriginal), viewController:DonateViewController()),
             
-            barItem(tabBarTitle:"Cart", tabBarImage: UIImage(systemName: "cart")!.withTintColor(UIColor( #colorLiteral(red: 0.1160495952, green: 0.597653091, blue: 0.5693894625, alpha: 1)  ), renderingMode: .alwaysOriginal), viewController:CartViewController()),
-            barItem(tabBarTitle:"profile", tabBarImage: UIImage(systemName: "person.circle")!.withTintColor(UIColor( #colorLiteral(red: 0.1160495952, green: 0.597653091, blue: 0.5693894625, alpha: 1)  ), renderingMode: .alwaysOriginal), viewController:MenuViewController()),
+            barItem(tabBarTitle:"Cart".localized, tabBarImage: UIImage(systemName: "cart")!.withTintColor(UIColor( #colorLiteral(red: 0.1160495952, green: 0.597653091, blue: 0.5693894625, alpha: 1)  ), renderingMode: .alwaysOriginal), viewController:CartViewController()),
+            barItem(tabBarTitle:"profile".localized, tabBarImage: UIImage(systemName: "person.circle")!.withTintColor(UIColor( #colorLiteral(red: 0.1160495952, green: 0.597653091, blue: 0.5693894625, alpha: 1)  ), renderingMode: .alwaysOriginal), viewController:MenuViewController()),
         
         ]
         

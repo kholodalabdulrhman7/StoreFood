@@ -5,8 +5,6 @@
 //  Created by Kholod Sultan on 20/05/1443 AH.
 //
 
-
-
 import UIKit
 import FirebaseAuth
 import JGProgressHUD

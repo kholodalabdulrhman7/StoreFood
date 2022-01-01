@@ -5,8 +5,12 @@
 //  Created by Kholod Sultan on 23/05/1443 AH.
 //
 
+
+
+
 import UIKit
 import JGProgressHUD
+import MOLH
 
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
  
@@ -15,8 +19,8 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var tableView = UITableView()
 
-    var menuImages:[String] = ["user", "choices", "language", "support"]
-    var menuNames:[String] = ["Profile", "Orders Number", "Change Language", "Customer Support"]
+    var menuImages:[String] = ["user", "choices", "language", "support", "color-palette"]
+    var menuNames:[String] = ["Profile".localized, "Orders Number".localized, "Change Language".localized, "Customer Support".localized, "Change appearance".localized]
     
     var ordersCount = 0
     
@@ -25,7 +29,10 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         // Do any additional setup after loading the view.
         
-        self.view.backgroundColor = UIColor.white
+//        self.view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.systemGray6
+        tableView.backgroundColor = .clear
+
         setupTableView()
     }
     
@@ -65,7 +72,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         case 1:
             cell.detailsLbl.text = "\(ordersCount) Order"
         case 2:
-            cell.detailsLbl.text = "En"
+            cell.detailsLbl.text = MOLHLanguage.currentAppleLanguage()
         case 3:
             cell.detailsLbl.text = ""
         default:
@@ -89,14 +96,77 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         case 0:
             let vc = ProfileScreen()
             self.navigationController?.pushViewController(vc, animated: true)
+        case 2:
+            ChangeLanguage()
         case 3:
             let vc = CustomerSupportViewController()
             self.navigationController?.pushViewController(vc, animated: true)
+        case 4:
+            changeAppearance()
         default:
             break
         }
         
 
+    }
+    
+    func changeAppearance() {
+        switch traitCollection.userInterfaceStyle {
+        case .light:
+            AppDelegate.shared.window?.overrideUserInterfaceStyle = .dark
+        case .dark:
+            AppDelegate.shared.window?.overrideUserInterfaceStyle = .light
+        case .unspecified:
+            AppDelegate.shared.window?.overrideUserInterfaceStyle = .light
+        @unknown default:
+            AppDelegate.shared.window?.overrideUserInterfaceStyle = .dark
+        }
+    }
+    
+    
+    func ChangeLanguage() {
+        if MOLHLanguage.isArabic() {
+            
+            // create the alert
+            let alert = UIAlertController(title: "Change language".localized, message: "Do you whant to change language to English".localized, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Yes".localized, style: UIAlertAction.Style.default, handler: { action in
+                DispatchQueue.main.async {
+                    MOLH.setLanguageTo("en")
+                    UIView.appearance().semanticContentAttribute = .forceLeftToRight
+                    let vc =  WelcomeScreen()
+
+                    AppDelegate.shared.window?.rootViewController = UINavigationController(rootViewController: vc)
+
+                }
+                
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel".localized, style: UIAlertAction.Style.destructive, handler: nil))
+
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+            
+            
+        } else {
+            // create the alert
+            let alert = UIAlertController(title: "Change language".localized, message: "Do you whant to change language to Arabic".localized, preferredStyle: UIAlertController.Style.alert)
+            // add the actions (buttons)
+            alert.addAction(UIAlertAction(title: "Yes".localized, style: UIAlertAction.Style.default, handler: { action in
+                DispatchQueue.main.async {
+                MOLH.setLanguageTo("ar")
+
+                UIView.appearance().semanticContentAttribute = .forceRightToLeft
+                let vc =  WelcomeScreen()
+                AppDelegate.shared.window?.rootViewController = UINavigationController(rootViewController: vc)
+
+                    
+                }
+
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel".localized, style: UIAlertAction.Style.destructive, handler: nil))
+
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
 
@@ -131,3 +201,9 @@ extension MenuViewController {
        }
 }
 
+extension String {
+    
+    var localized: String {
+        return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "")
+    }
+}

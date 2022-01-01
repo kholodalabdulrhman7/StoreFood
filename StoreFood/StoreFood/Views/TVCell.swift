@@ -5,6 +5,7 @@
 //  Created by Kholod Sultan on 22/05/1443 AH.
 //
 
+
 import UIKit
 
 class TabelViewCell: UITableViewCell {

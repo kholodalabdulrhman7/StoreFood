@@ -4,6 +4,8 @@
 //
 //  Created by Kholod Sultan on 22/05/1443 AH.
 //
+
+
 import UIKit
 import FirebaseFirestore
 import FirebaseAuth
@@ -81,7 +83,9 @@ class DetailVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         view.addSubview(summary)
         view.addSubview(addToCartButton)
 
-        view.backgroundColor = .white
+//        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
+
 //        cakeImage.image = UIImage(named: cake?.image ?? "") ?? UIImage()
         
         let url = URL(string: cake?.image ?? "" )

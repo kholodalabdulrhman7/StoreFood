@@ -172,7 +172,7 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         self.navigationItem.largeTitleDisplayMode = .always
         
         searchBar.searchBarStyle = UISearchBar.Style.default
-        searchBar.placeholder = " Search..."
+        searchBar.placeholder = " Search...".localized
         searchBar.sizeToFit()
         searchBar.isTranslucent = false
         searchBar.backgroundImage = UIImage()
@@ -213,7 +213,7 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     }
     
     private func getCategories() {
-        hud.textLabel.text = "Loading"
+        hud.textLabel.text = "Loading".localized
         hud.show(in: self.view)
         
         db.collection("categories").getDocuments { (snapshot, err) in
@@ -384,7 +384,7 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     func showAddTypePicker(_ sender: UIBarButtonItem) {
      
-        ActionSheetStringPicker.show(withTitle: "Choose adding type", rows: ["Add Category", "Add Product"], initialSelection: 0, doneBlock: { picker, index, values in
+        ActionSheetStringPicker.show(withTitle: "Choose adding type".localized, rows: ["Add Category".localized, "Add Product".localized], initialSelection: 0, doneBlock: { picker, index, values in
           
             if index == 0 {
                 let vc = AddCategoryViewController()
@@ -402,7 +402,7 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     func showEmptyText(isShow: Bool) {
         let emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
-              emptyLabel.text = "Sorry, There is no products"
+        emptyLabel.text = "Sorry, There is no products".localized
         emptyLabel.textAlignment = .center
         
         if isShow {

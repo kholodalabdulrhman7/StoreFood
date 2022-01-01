@@ -75,13 +75,13 @@ class SignupScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(#colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1) )
+        view.backgroundColor = UIColor (#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) )
         setupViews()
     }
     
     
     @objc func tapChooseMenuItem(_ sender: UIButton) {//3
-        dropDown.dataSource = [NSLocalizedString("Customer", comment: ""), NSLocalizedString("Manager", comment: ""), NSLocalizedString("Guest", comment: "")]//4
+        dropDown.dataSource = [NSLocalizedString("Customer", comment: ""), NSLocalizedString("Manager", comment: "")]//4
       dropDown.anchorView = sender //5
       dropDown.bottomOffset = CGPoint(x: 0, y: sender.frame.size.height) //6
       dropDown.show() //7

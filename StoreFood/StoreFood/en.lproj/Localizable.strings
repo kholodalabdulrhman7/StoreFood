@@ -1,0 +1,49 @@
+/* 
+  Localizble.strings
+  StoreFood
+
+  Created by Kholod Sultan on 25/05/1443 AH.
+  
+*/
+"Log in" = "Log in" ;
+"Welcome" =  "Welcome" ;
+"share your moments with one pices Cake" = "share your moments with one pices Cake";
+"Sign up" = "Sign up" ;
+"Creating an account." = "Creating an account." ;
+"Create account" = "Create account" ;
+"Select type" = "Select type" ;
+"Customer" = "Customer" ;
+"Manager" = "Manager";
+"Email" = "Email" ;
+"Name" = "Name";
+"Password" = "Password" ;
+"Welcome back!" = "Welcome back!" ;
+"Email" = "Email" ;
+"Password" = "Password" ;
+"Log in" = "Log in" ;
+"Change language" = "Change language";
+"Profile" = "Profile";
+"Your password is weak, please make sure it's strong." = "Your password is weak, please make sure it's strong.";
+"Oops!" = "Oops!" ;
+"are sure you typed the email correctly?" = "are sure you typed the email correctly?" ;
+"OK" = "OK" ;
+"please make sure name, email and password are not empty." = "please make sure name, email and password are not empty." ;
+"email Already in use" = "email Already in use" ;
+"Change language" = "Change language";
+"Choose adding type" = "Choose adding type" ;
+"Add Category" = "Add Category" ;
+"Add Product" = "Add Product" ;
+"Sorry, There is no products" = "Sorry, There is no products" ;
+"Loading" = "Loading" ;
+"Customer Support" = "Customer Support" ;
+"Message Title" = "Message Title" ;
+"Do you whant to change language to English" = "Do you whant to change language to English" ;
+"Cancel" = "Cancel" ;
+"Do you whant to change language to Arabic" = "Do you whant to change language to Arabic" ;
+"Orders Number" = "Orders Number" ;
+"Customer Support"= "Customer Support";
+ "Change appearance" = "Change appearance" ;
+"Settings"= "Settings";
+"Yes" = "Yes" ;
+" Search..." = " Search..." ;
+"Select Image" = "Select Image";

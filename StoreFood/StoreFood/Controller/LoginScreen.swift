@@ -37,7 +37,7 @@ class LoginScreen: UIViewController {
         title.backgroundColor = .clear
         title.text = NSLocalizedString("Welcome back!", comment: "")
         title.font = UIFont.systemFont(ofSize: 29, weight: .bold)
-        title.textColor = UIColor(#colorLiteral(red: 0.9175770879, green: 0.7899500132, blue: 0.8629837036, alpha: 1))
+        title.textColor = .black
         title.textAlignment = .center
         title.numberOfLines = 0
         return title
@@ -67,7 +67,7 @@ class LoginScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(#colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1) )
+        view.backgroundColor = UIColor (#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) )
         setupViews()
     }
     
@@ -158,26 +158,26 @@ class LoginScreen: UIViewController {
                 switch AuthErrorCode(rawValue: error.code) {
                 case .wrongPassword:
                     
-                    let alert = UIAlertController(title: "Oops!", message: "you entered a wrong password", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Oops!".localized, message: "you entered a wrong password".localized, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                     self.present(alert, animated: true)
                     
                 case .invalidEmail:
                     
-                    let alert = UIAlertController(title: "Oops!", message: "are sure you typed the email correctly?", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Oops!".localized, message: "are sure you typed the email correctly?".localized, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                     self.present(alert, animated: true)
                     
                 case .weakPassword:
                     
-                    let alert = UIAlertController(title: "Oops!", message: "Your password is weak, please make sure it's strong.", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    let alert = UIAlertController(title: "Oops!".localized, message: "Your password is weak, please make sure it's strong.".localized, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK".localized, style: .cancel, handler: nil))
                     self.present(alert, animated: true)
                     
                 default:
                     
-                    let alert = UIAlertController(title: "Oops!", message: "\(error.localizedDescription)", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    let alert = UIAlertController(title: "Oops!".localized, message: "\(error.localizedDescription)", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK".localized, style: .cancel, handler: nil))
                     self.present(alert, animated: true)
                     
                 }
