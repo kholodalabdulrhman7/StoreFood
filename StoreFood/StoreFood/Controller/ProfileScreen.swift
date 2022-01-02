@@ -50,7 +50,7 @@ class ProfileScreen: UIViewController {
     
     let signOutButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setupButton(with: "Sign out")
+        button.setupButton(with: "Sign out".localized)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -277,6 +277,7 @@ extension ProfileScreen: UIImagePickerControllerDelegate, UINavigationController
             if error == nil {
                 ref.downloadURL(completion: { (url, error) in
                     self.saveImageToFirestore(url: "\(url!)", userId: currentUser.uid)
+                    
                     
                 })
             }else{

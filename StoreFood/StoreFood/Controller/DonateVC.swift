@@ -88,10 +88,6 @@ class DonateViewController: UIViewController, UICollectionViewDelegate, UICollec
 
         cell.setCell(card:  products[indexPath.row])
 
-        
-//        cell.deleteBtn.addTarget(self, action: #selector(deleteProduct), for: .touchUpInside)
-//        cell.deleteBtn.tag = indexPath.row
-//        cell.deleteBtn.isHidden = false
 
 
         

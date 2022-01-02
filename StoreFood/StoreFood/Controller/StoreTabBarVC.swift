@@ -38,7 +38,6 @@ class StoreTabBar: UITabBarController {
         navigationController.viewControllers = [viewController]
         navigationController.tabBarItem.title = tabBarTitle
         navigationController.tabBarItem.image = tabBarImage
-//        navigationController.navigationBar.prefersLargeTitles = true
         return navigationController
     }
 }

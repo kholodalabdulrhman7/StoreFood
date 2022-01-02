@@ -5,6 +5,9 @@
   Created by Kholod Sultan on 25/05/1443 AH.
   
 */
+
+
+
 "Log in" = "Log in" ;
 "Welcome" =  "Welcome" ;
 "share your moments with one pices Cake" = "share your moments with one pices Cake";
@@ -47,3 +50,5 @@
 "Yes" = "Yes" ;
 " Search..." = " Search..." ;
 "Select Image" = "Select Image";
+"Sign out" = "Sign out" ;
+"Send Message" = "Send Message" ;

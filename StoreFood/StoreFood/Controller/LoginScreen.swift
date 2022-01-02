@@ -27,7 +27,8 @@ class LoginScreen: UIViewController {
     let illustrationImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "signup")
-        image.contentMode = .scaleAspectFill
+        image.layer.cornerRadius = 30
+        image.contentMode = .scaleAspectFit
         image.clipsToBounds = true
         return image
     }()
@@ -143,9 +144,9 @@ class LoginScreen: UIViewController {
         if !email.isEmpty && !password.isEmpty {
             loginUsing(email: email, password: password)
         }else{
-            let alert = UIAlertController(title: "Oops!", message: "please make sure email and password are not empty.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Oops!".localized, message: "please make sure email and password are not empty.".localized, preferredStyle: .alert)
             
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "OK".localized, style: .cancel, handler: nil))
             
             present(alert, animated: true)
         }
@@ -159,13 +160,13 @@ class LoginScreen: UIViewController {
                 case .wrongPassword:
                     
                     let alert = UIAlertController(title: "Oops!".localized, message: "you entered a wrong password".localized, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    alert.addAction(UIAlertAction(title: "OK".localized, style: .cancel, handler: nil))
                     self.present(alert, animated: true)
                     
                 case .invalidEmail:
                     
                     let alert = UIAlertController(title: "Oops!".localized, message: "are sure you typed the email correctly?".localized, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    alert.addAction(UIAlertAction(title: "OK".localized, style: .cancel, handler: nil))
                     self.present(alert, animated: true)
                     
                 case .weakPassword:
@@ -204,10 +205,7 @@ class LoginScreen: UIViewController {
                 nav.modalTransitionStyle = .flipHorizontal
                 self.present(nav, animated: true, completion: nil)
                 
-//       self.navigationController?.pushViewController(StoreTabBar(),animated: true)
 
-//                self.navigationController?.popToRootViewController(animated: true)
-//                self.navigationController?.pushViewController(StoreTabBar(),animated: true)
             }
             
             

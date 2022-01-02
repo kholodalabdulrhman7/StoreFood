@@ -110,7 +110,7 @@ class SignupScreen: UIViewController {
         passwordTextField.delegate = self
         containerView.addSubview(passwordTextField)
         
-//        passwordTextField.bottomAnchor.constraint(equalTo: createAccountButton.topAnchor, constant: -20).isActive = true
+        
         passwordTextField.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20).isActive = true
         passwordTextField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20).isActive = true
         passwordTextField.heightAnchor.constraint(equalToConstant: 45).isActive = true
@@ -178,7 +178,7 @@ class SignupScreen: UIViewController {
         if !email.isEmpty && !password.isEmpty && !name.isEmpty{
             signupUserUsing(email: email, password: password, name: name)
         }else{
-            let alert = UIAlertController(title: "Oops!", message: "please make sure name, email and password are not empty.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Oops!".localized, message: "please make sure name, email and password are not empty.".localized, preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             
@@ -193,26 +193,26 @@ class SignupScreen: UIViewController {
                 switch AuthErrorCode(rawValue: error.code) {
                 case .emailAlreadyInUse:
                     
-                    let alert = UIAlertController(title: "Oops!", message: "email Already in use", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    let alert = UIAlertController(title: "Oops!".localized, message: "email Already in use".localized, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK".localized, style: .cancel, handler: nil))
                     self.present(alert, animated: true)
                     
                 case .invalidEmail:
                     
-                    let alert = UIAlertController(title: "Oops!", message: "are sure you typed the email correctly?", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Oops!".localized, message: "are sure you typed the email correctly?".localized, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                     self.present(alert, animated: true)
                     
                 case .weakPassword:
                     
-                    let alert = UIAlertController(title: "Oops!", message: "Your password is weak, please make sure it's strong.", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    let alert = UIAlertController(title: "Oops!".localized, message: "Your password is weak, please make sure it's strong.".localized, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK".localized, style: .cancel, handler: nil))
                     self.present(alert, animated: true)
                     
                 default:
                     
-                    let alert = UIAlertController(title: "Oops!", message: "\(error.localizedDescription)", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    let alert = UIAlertController(title: "Oops!".localized, message: "\(error.localizedDescription)", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK".localized, style: .cancel, handler: nil))
                     self.present(alert, animated: true)
                     
                 }
@@ -241,8 +241,7 @@ class SignupScreen: UIViewController {
                 nav.modalTransitionStyle = .flipHorizontal
                 self.present(nav, animated: true, completion: nil)
                 
-//                self.navigationController?.popViewController(animated: true)
-//                self.navigationController?.pushViewController(StoreTabBar(),animated: true)
+
             }
             
             

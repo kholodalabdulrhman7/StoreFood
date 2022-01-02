@@ -83,10 +83,9 @@ class DetailVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         view.addSubview(summary)
         view.addSubview(addToCartButton)
 
-//        view.backgroundColor = .white
         view.backgroundColor = .systemBackground
 
-//        cakeImage.image = UIImage(named: cake?.image ?? "") ?? UIImage()
+
         
         let url = URL(string: cake?.image ?? "" )
         if let u = url {
@@ -96,16 +95,9 @@ class DetailVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         
         name.text = cake?.name
         summary.text = cake?.summary
-        
-//        TableView.backgroundColor = .red
-//        TableView.register(TabelViewCell.self, forCellReuseIdentifier: TabelViewCell.cell)
 
         NSLayoutConstraint.activate([
-//            TableView.topAnchor.constraint(equalTo: view.topAnchor, constant:0),
-//            TableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:0),
-//            TableView.rightAnchor.constraint(equalTo: view.rightAnchor, constant:0),
-//            TableView.leftAnchor.constraint(equalTo: view.leftAnchor, constant:0),
-            
+     
         ])
         
         let margins = view.layoutMarginsGuide

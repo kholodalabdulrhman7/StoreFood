@@ -43,7 +43,7 @@ class CustomerSupportViewController: UIViewController {
     
     let sendMessageButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setupButton(with: "Send Message")
+        button.setupButton(with: "Send Message".localized)
         return button
     }()
 

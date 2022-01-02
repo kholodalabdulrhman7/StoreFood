@@ -11,6 +11,8 @@ import UIKit
 import ActionSheetPicker_3_0
 import JGProgressHUD
 
+
+
 class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate, UICollectionViewDelegateFlowLayout {
     
     var filteredData: [Cake] = []
@@ -79,13 +81,6 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        if collectionView == CategoriesCollectionViewCell {
-//            Ret
-//        } else {
-//
-//        }
-//    }
 
     
     @objc func deleteProduct(sender: UIButton) {
@@ -285,7 +280,6 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     private func configureCollectionView(){
         collectionView   = UICollectionView(frame: CGRect.zero, collectionViewLayout: Layout())
-//            collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             collectionView.backgroundColor = UIColor(named: "backgroundColor")
             collectionView.delegate = self
             collectionView.dataSource = self
@@ -364,16 +358,6 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         }
     
     private func CategoriesLayout() -> UICollectionViewFlowLayout{
-//        let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
-//
-//        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
-//
-//        let group = NSCollectionLayoutGroup.vertical(layoutSize: NSCollectionLayoutSize(
-//            widthDimension: .fractionalWidth(1),
-//            heightDimension: .estimated(50)),subitems: [item])
-//
-//        let section = NSCollectionLayoutSection(group: group)
-     
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 130, height: 40)
         layout.scrollDirection = .horizontal
