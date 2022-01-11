@@ -10,6 +10,8 @@
 import UIKit
 import ActionSheetPicker_3_0
 import JGProgressHUD
+import FirebaseAuth
+import FirebaseFirestore
 
 
 
@@ -18,7 +20,8 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     var filteredData: [Cake] = []
     var isFilter = false
     var products: [Cake] = []
-    
+    let db = Firestore.firestore()
+
     var selectedCategoryIndex: Int?
     
     var categoriesData: [Category] = []
@@ -50,7 +53,7 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
             cell.sertCell(category: categoriesData[indexPath.row])
             
             if let index = selectedCategoryIndex, index == indexPath.row {
-                cell.backgroundColor = UIColor( #colorLiteral(red: 0.1595600843, green: 0.810018003, blue: 0.7768369317, alpha: 1))
+                cell.contentView.backgroundColor = UIColor( #colorLiteral(red: 0.1595600843, green: 0.810018003, blue: 0.7768369317, alpha: 1))
                 
             } else {
                 cell.backgroundColor = UIColor.white
@@ -74,13 +77,22 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
             cell.deleteBtn.addTarget(self, action: #selector(deleteProduct), for: .touchUpInside)
             cell.deleteBtn.tag = indexPath.row
           
-
+            
+            cell.favBtn.addTarget(self, action: #selector(addToFavourite), for: .touchUpInside)
+            cell.favBtn.tag = indexPath.row
             
          return cell
         }
     
     }
     
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        if collectionView == CategoriesCollectionViewCell {
+//            Ret
+//        } else {
+//
+//        }
+//    }
 
     
     @objc func deleteProduct(sender: UIButton) {
@@ -103,6 +115,25 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         self.present(alert, animated: true, completion: nil)
         
         
+    }
+    
+    @objc func addToFavourite(sender: UIButton) {
+            self.db.collection("favourite").document().setData([
+                "userId": Auth.auth().currentUser?.uid ?? "",
+                "productId": self.products[sender.tag].uid,
+            ]) { err in
+                if let err = err {
+                    print("Error writing document: \(err)")
+                } else {
+                    print("Document successfully written!")
+                    let alert = UIAlertController(title: "نجاح", message: "تم اضافة المنتج للمفضلة", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "حسناً", style: .default, handler: { action in
+                      
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                    
+                }
+            }
     }
     
     func remove(child: String) {
@@ -167,7 +198,7 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         self.navigationItem.largeTitleDisplayMode = .always
         
         searchBar.searchBarStyle = UISearchBar.Style.default
-        searchBar.placeholder = " Search...".localized
+        searchBar.placeholder = " Search..."
         searchBar.sizeToFit()
         searchBar.isTranslucent = false
         searchBar.backgroundImage = UIImage()
@@ -259,8 +290,9 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
                     let price = document.get("price") as! String
                     let image = document.get("image") as! String
                     let cookby = document.get("cookby") as! String
+                    let rate = document.get("rate") as? String
 
-                    let product = Cake(name: name, summary: summary, price: price, image: image, cookby: cookby, uid: docId)
+                    let product = Cake(name: name, summary: summary, price: price, image: image, cookby: cookby, uid: docId, rate: rate ?? "")
                     products.append(product)
                 }
                 
@@ -280,6 +312,7 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     private func configureCollectionView(){
         collectionView   = UICollectionView(frame: CGRect.zero, collectionViewLayout: Layout())
+//            collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             collectionView.backgroundColor = UIColor(named: "backgroundColor")
             collectionView.delegate = self
             collectionView.dataSource = self
@@ -358,6 +391,16 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         }
     
     private func CategoriesLayout() -> UICollectionViewFlowLayout{
+//        let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
+//
+//        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
+//
+//        let group = NSCollectionLayoutGroup.vertical(layoutSize: NSCollectionLayoutSize(
+//            widthDimension: .fractionalWidth(1),
+//            heightDimension: .estimated(50)),subitems: [item])
+//
+//        let section = NSCollectionLayoutSection(group: group)
+     
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 130, height: 40)
         layout.scrollDirection = .horizontal
@@ -368,7 +411,7 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     func showAddTypePicker(_ sender: UIBarButtonItem) {
      
-        ActionSheetStringPicker.show(withTitle: "Choose adding type".localized, rows: ["Add Category".localized, "Add Product".localized], initialSelection: 0, doneBlock: { picker, index, values in
+        ActionSheetStringPicker.show(withTitle: "Choose adding type", rows: ["Add Category", "Add Product"], initialSelection: 0, doneBlock: { picker, index, values in
           
             if index == 0 {
                 let vc = AddCategoryViewController()
@@ -386,7 +429,7 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     func showEmptyText(isShow: Bool) {
         let emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
-        emptyLabel.text = "Sorry, There is no products".localized
+              emptyLabel.text = "Sorry, There is no products"
         emptyLabel.textAlignment = .center
         
         if isShow {

@@ -15,6 +15,8 @@ class CollectionCell: UICollectionViewCell {
     
     var product: Cake?
     
+    var isDeleteHidden = false
+    
     private let imageView : UIImageView = {
         let image           = UIImageView()
         
@@ -31,6 +33,15 @@ class CollectionCell: UICollectionViewCell {
         title.font = UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: 20, weight: .medium))
         return title
     }()
+    
+    private let starLbl : UILabel = {
+        let title = UILabel()
+        title.textColor =  UIColor.label
+        title.translatesAutoresizingMaskIntoConstraints = false
+        title.font = UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: 16, weight: .regular))
+        return title
+    }()
+    
     private let summary: UILabel = {
         let description = UILabel()
         description.textColor =  UIColor.secondaryLabel
@@ -72,6 +83,23 @@ class CollectionCell: UICollectionViewCell {
         return button
     }()
     
+    let favBtn: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "heart"), for: .normal)
+        button.tintColor = .black
+        
+        return button
+    }()
+    
+    let starImage: UIImageView = {
+        let img = UIImageView()
+        img.image = UIImage(systemName: "star")
+        img.tintColor = .systemYellow
+        img.translatesAutoresizingMaskIntoConstraints = false
+
+        return img
+    }()
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -96,7 +124,8 @@ class CollectionCell: UICollectionViewCell {
         name.text = card.name
         summary.text = card.summary
         cookby.text = card.cookby
-
+        starLbl.text = card.rate
+        deleteBtn.isHidden = true
         print("this is price: \(card.price)")
         if  card.price != "" {
             price.text = card.price + " SAR"
@@ -123,8 +152,15 @@ class CollectionCell: UICollectionViewCell {
 
         name.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10).isActive = true
         name.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 14).isActive = true
-//        name.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 14).isActive = true
+        
+        starImage.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10).isActive = true
+        starImage.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
+        starImage.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        starImage.widthAnchor.constraint(equalToConstant: 20).isActive = true
 
+        starLbl.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10).isActive = true
+        starLbl.trailingAnchor.constraint(equalTo: starImage.leadingAnchor, constant: -8).isActive = true
+        
         summary.topAnchor.constraint(equalTo: name.bottomAnchor, constant: 10).isActive = true
         summary.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 14).isActive = true
 //        summary.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 14).isActive = true
@@ -147,17 +183,24 @@ class CollectionCell: UICollectionViewCell {
         self.addSubview(summary)
         self.addSubview(price)
         self.addSubview(cookby)
+        
         self.layer.cornerRadius = 13
         self.layer.masksToBounds = true
         self.addSubview(self.deleteBtn)
+        self.addSubview(favBtn)
+        self.addSubview(starImage)
+        self.addSubview(starLbl)
+
         self.deleteBtn.frame = CGRect(x: MOLHLanguage.isArabic() ? self.frame.size.width - 30 : 20, y:self.frame.size.height - 50, width: 20, height: 25)
+        self.favBtn.frame = CGRect(x: MOLHLanguage.isArabic() ? 20 : self.frame.size.width - 30, y:self.frame.size.height - 30, width: 20, height: 25)
+        
         self.deleteBtn.isHidden = true
 
         
         getCurrentUserFromFirestore { type in
             print("the user type is \(type)")
             if type == "1" {
-                self.deleteBtn.isHidden = false
+                self.deleteBtn.isHidden = self.isDeleteHidden
             }
         }
     }

@@ -85,16 +85,7 @@ class MenuTableViewCell: UITableViewCell {
     }
     
     
-    private func setupSizeForCellContent() {
-//        menuImageView.frame = CGRect(x: 10, y: (self.frame.size.height / 2) - 17.5, width: 35, height: 35)
-
-//        name.frame = CGRect(x: 58, y:  (self.frame.size.height / 2) - 7, width: self.frame.size.width - 14, height: 15)
-        
-//        arrowImageView.frame = CGRect(x: self.frame.size.width - 20 , y: (self.frame.size.height / 2) - 8, width: 8, height: 16)
-
-//        detailsLbl.frame = CGRect(x: self.frame.size.width - 85, y:  (self.frame.size.height / 2) - 7, width: 70, height: 15)
-
-        
+    private func setupSizeForCellContent() {    
         menuImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         menuImageView.widthAnchor.constraint(equalToConstant: 35).isActive = true
         menuImageView.heightAnchor.constraint(equalToConstant: 35).isActive = true
@@ -103,7 +94,7 @@ class MenuTableViewCell: UITableViewCell {
         
         name.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         name.leadingAnchor.constraint(equalTo: self.menuImageView.trailingAnchor, constant: 10).isActive = true
-//        name.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 10).isActive = true
+
 
         arrowImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         arrowImageView.widthAnchor.constraint(equalToConstant: 8).isActive = true

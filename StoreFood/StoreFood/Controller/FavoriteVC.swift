@@ -1,15 +1,17 @@
 //
-//  CartVC.swift
+//  FavoriteVC.swift
 //  StoreFood
 //
-//  Created by Kholod Sultan on 20/05/1443 AH.
+//  Created by Kholod Sultan on 07/06/1443 AH.
 //
 
 import UIKit
-import FirebaseAuth
 import JGProgressHUD
+import FirebaseAuth
+import FirebaseFirestore
 
-class CartViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+
+class FavouriteViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     
     var filteredData: [Cake] = []
@@ -33,24 +35,41 @@ class CartViewController: UIViewController, UICollectionViewDelegate, UICollecti
         cell.setCell(card:  self.productsData[indexPath.row])
 
         
-        cell.deleteBtn.addTarget(self, action: #selector(deleteProduct), for: .touchUpInside)
-        cell.deleteBtn.tag = indexPath.row
-        cell.deleteBtn.isHidden = false
+        cell.isDeleteHidden = true
 
+        
+        cell.favBtn.addTarget(self, action: #selector(deleteFromFav), for: .touchUpInside)
+        cell.favBtn.tag = indexPath.row
 
+        
         
      return cell
     }
 
     
-    @objc func deleteProduct(sender: UIButton) {
-        let alert = UIAlertController(title: "تحذير", message: "هل أنت متأكد من حذف المنتج من السلة ؟", preferredStyle: UIAlertController.Style.alert)
+    @objc func deleteFromFav(sender: UIButton) {
+        let alert = UIAlertController(title: "تحذير", message: "هل أنت متأكد من حذف المنتج من المفضلة ؟", preferredStyle: UIAlertController.Style.alert)
         
         
         alert.addAction(UIAlertAction(title: "نعم", style: UIAlertAction.Style.default, handler: { action in
             
-//            self.productsData.remove(at: sender.tag)
-//            self.collectionView.reloadData()
+            self.deleteCartProduct(uid: self.docIds[sender.tag])
+        }))
+        
+        alert.addAction(UIAlertAction(title: "إلغاء", style: UIAlertAction.Style.destructive, handler: nil))
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+        
+        
+    }
+    
+    @objc func deleteProduct(sender: UIButton) {
+        let alert = UIAlertController(title: "تحذير", message: "هل أنت متأكد من حذف المنتج من المفضلة ؟", preferredStyle: UIAlertController.Style.alert)
+        
+        
+        alert.addAction(UIAlertAction(title: "نعم", style: UIAlertAction.Style.default, handler: { action in
+
             self.deleteCartProduct(uid: self.docIds[sender.tag])
         }))
         
@@ -90,7 +109,7 @@ class CartViewController: UIViewController, UICollectionViewDelegate, UICollecti
                     navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
                 }
             
-            self.navigationController?.navigationBar.topItem?.title = "Cart"
+            self.navigationController?.navigationBar.topItem?.title = "Favourite"
 
             
             configureCollectionView()
@@ -104,7 +123,7 @@ class CartViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        self.collectionView.reloadData()
+        self.navigationController?.navigationBar.isHidden = false
         getCartProducts()
         print(cartArr.count)
     }
@@ -149,14 +168,8 @@ class CartViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
 
     private func deleteCartProduct(uid: String) {
-//       db.collection("cart").whereField("productId", isEqualTo: uid).getDocuments { snapshot, err in
-//           for document in snapshot!.documents {
-//               document.reference.delete()
-//           }
-//           self.getCartProducts()
-//
-//        }
-        db.collection("cart").document(uid).delete()
+
+        db.collection("favourite").document(uid).delete()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.getCartProducts()
         }
@@ -167,7 +180,7 @@ class CartViewController: UIViewController, UICollectionViewDelegate, UICollecti
         self.hud.show(in: self.view)
         hud.textLabel.text = "Loading"
         
-        db.collection("cart").whereField("userId", isEqualTo: Auth.auth().currentUser?.uid ?? "").getDocuments { (snapshot, err) in
+        db.collection("favourite").whereField("userId", isEqualTo: Auth.auth().currentUser?.uid ?? "").getDocuments { (snapshot, err) in
             if let error = err {
                 print("error getting documents \(error)")
                 self.hud.dismiss()
@@ -227,5 +240,5 @@ class CartViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
     }
     
-}
 
+}

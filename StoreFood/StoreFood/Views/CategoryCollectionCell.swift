@@ -61,11 +61,6 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupSizeForCellContent() {
-//        imageView.frame = CGRect(x: 10, y: (self.frame.size.height / 2) - 15, width: 30, height: 30)
-        
-//        name.frame = CGRect(x: 48, y:  (self.frame.size.height / 2) - 7, width: self.frame.size.width - 14, height: 15)
-        
-
         imageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: 30).isActive = true
@@ -75,8 +70,6 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
 
         name.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         name.leadingAnchor.constraint(equalTo: self.imageView.trailingAnchor, constant: 5).isActive = true
-//        name.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 10).isActive = true
-
     }
     
 }

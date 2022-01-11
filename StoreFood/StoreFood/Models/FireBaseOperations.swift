@@ -19,7 +19,6 @@ func getCurrentUserFromFirestore(completion: @escaping(String)->()) {
     
     docRef.getDocument { (document, error) in
         if let document = document, document.exists {
-           // /Users/kholodsultan/BakeryCake/BakeryCake/Models/FireBaseOperation.swift
             let type = document.get("type") as? String
             
             print(type ?? "")
@@ -50,22 +49,3 @@ func uploadImage(image: UIImage, completion: @escaping (_ url: String?) -> Void)
     }
 }
 
-//func addCategory(image: UIImage, categoryName: String ) {
-//
-//    uploadImage(image: image) { url in
-//
-//        db.collection("categories").document().setData([
-//            "name": categoryName,
-//            "url": url,
-//        ]) { err in
-//            if let err = err {
-//                print("Error writing document: \(err)")
-//            } else {
-//                print("Document successfully written!")
-//                self.successMessage()
-//            }
-//        }
-//
-//    }
-//
-//}

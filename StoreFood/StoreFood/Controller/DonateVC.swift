@@ -65,8 +65,9 @@ class DonateViewController: UIViewController, UICollectionViewDelegate, UICollec
                     let price = document.get("price") as! String
                     let image = document.get("image") as! String
                     let cookby = document.get("cookby") as! String
+                    let rate = document.get("rate") as? String
 
-                    let product = Cake(name: name, summary: summary, price: price, image: image, cookby: cookby, uid: docId)
+                    let product = Cake(name: name, summary: summary, price: price, image: image, cookby: cookby, uid: docId, rate: rate ?? "")
                     products.append(product)
                 }
                 completion(products)

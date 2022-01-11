@@ -44,7 +44,6 @@ class DetailVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     let cakeImage : UIImageView = {
         let img = UIImageView()
         img.clipsToBounds = true
-
       return img
     }()
     
@@ -161,12 +160,23 @@ class DetailVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
                 print("Error writing document: \(err)")
             } else {
                 print("Document successfully written!")
+                self.addRate()
                 
             }
         }
     }
-    
-    
-     
-    
+    func addRate() {
+        let alertController = UIAlertController(title: "Add the rate for product from 0 to 5".localized, message: "", preferredStyle: .alert)
+
+        let saveAction = UIAlertAction(title: "Save".localized, style: .default, handler: { alert -> Void in
+            let firstTextField = alertController.textFields![0] as UITextField
+
+            
+            self.db.collection("products").document(self.cake?.uid ?? "").setData([
+                "rate" : firstTextField.text ?? "",
+            ], merge: true)
+        })
+        
+    }
 }
+

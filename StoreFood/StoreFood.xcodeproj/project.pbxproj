@@ -13,6 +13,7 @@
 		7A8C8BC5277853A1006A9DC6 /* CategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C8BC4277853A1006A9DC6 /* CategoryCollectionCell.swift */; };
 		7A8C8BC7277853FF006A9DC6 /* TVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C8BC6277853FF006A9DC6 /* TVCell.swift */; };
 		7A8C8BC92778548D006A9DC6 /* AddProudctVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C8BC82778548D006A9DC6 /* AddProudctVC.swift */; };
+		7A93AFF2278CBA2400A20C4C /* FavoriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A93AFF1278CBA2400A20C4C /* FavoriteVC.swift */; };
 		7AAECA4427799A7F00344295 /* ClassChooseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAECA4327799A7F00344295 /* ClassChooseButton.swift */; };
 		7AAECA482779AA7A00344295 /* MenueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAECA472779AA7A00344295 /* MenueVC.swift */; };
 		7AAECA4A2779AAD800344295 /* CustomerSupportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAECA492779AAD800344295 /* CustomerSupportVC.swift */; };
@@ -45,6 +46,7 @@
 		7A8C8BC4277853A1006A9DC6 /* CategoryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionCell.swift; sourceTree = "<group>"; };
 		7A8C8BC6277853FF006A9DC6 /* TVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCell.swift; sourceTree = "<group>"; };
 		7A8C8BC82778548D006A9DC6 /* AddProudctVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProudctVC.swift; sourceTree = "<group>"; };
+		7A93AFF1278CBA2400A20C4C /* FavoriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVC.swift; sourceTree = "<group>"; };
 		7AAECA4327799A7F00344295 /* ClassChooseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassChooseButton.swift; sourceTree = "<group>"; };
 		7AAECA472779AA7A00344295 /* MenueVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenueVC.swift; sourceTree = "<group>"; };
 		7AAECA492779AAD800344295 /* CustomerSupportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerSupportVC.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				7AAECA4327799A7F00344295 /* ClassChooseButton.swift */,
 				7AAECA472779AA7A00344295 /* MenueVC.swift */,
 				7AAECA492779AAD800344295 /* CustomerSupportVC.swift */,
+				7A93AFF1278CBA2400A20C4C /* FavoriteVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				7A8C8BC92778548D006A9DC6 /* AddProudctVC.swift in Sources */,
 				7ADC16B9277460A300BAC296 /* WelcomScreen.swift in Sources */,
 				7AC95DD127760E7800634655 /* CartVC.swift in Sources */,
+				7A93AFF2278CBA2400A20C4C /* FavoriteVC.swift in Sources */,
 				7A8C8BC7277853FF006A9DC6 /* TVCell.swift in Sources */,
 				7AAECA4427799A7F00344295 /* ClassChooseButton.swift in Sources */,
 				7ADC16CF2774892B00BAC296 /* SignupScreen.swift in Sources */,
@@ -481,6 +485,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2N5P9Y8Z64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StoreFood/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -508,6 +513,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2N5P9Y8Z64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StoreFood/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

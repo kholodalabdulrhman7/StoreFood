@@ -20,9 +20,8 @@ class AddCategoryViewController: UIViewController, UIImagePickerControllerDelega
     lazy var imagePicker : UIImagePickerController = {
        let imagePicker = UIImagePickerController()
        imagePicker.delegate = self
-       imagePicker.sourceType = .photoLibrary
+        imagePicker.sourceType = .photoLibrary
        imagePicker.allowsEditing = true
-       
        return imagePicker
    }()
     
@@ -33,7 +32,6 @@ class AddCategoryViewController: UIViewController, UIImagePickerControllerDelega
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .clear
         view.isUserInteractionEnabled = true
-        
         return view
     }()
     

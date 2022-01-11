@@ -15,6 +15,7 @@ extension UIButton {
     layer.cornerRadius = 20
     clipsToBounds = true
   }
+    
   open func setupButton(using image: String) {
     setImage(UIImage(systemName: image)?.withTintColor(.black, renderingMode: .alwaysOriginal), for: .normal)
     backgroundColor = .clear

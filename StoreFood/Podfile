@@ -6,7 +6,7 @@ target 'StoreFood' do
   use_frameworks!
 
   # Pods for StoreFood
-pod 'Firebase/Core'
+  pod 'Firebase/Core'
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
@@ -15,7 +15,7 @@ pod 'Firebase/Core'
   pod 'Firebase/Storage'
   pod 'DropDown'
   pod 'SwipeCellKit'
- pod 'ActionSheetPicker-3.0'
+  pod 'ActionSheetPicker-3.0'
   pod 'JGProgressHUD'
   pod 'MOLH'
 
