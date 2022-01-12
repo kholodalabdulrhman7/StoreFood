@@ -56,7 +56,7 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
                 cell.contentView.backgroundColor = UIColor( #colorLiteral(red: 0.1595600843, green: 0.810018003, blue: 0.7768369317, alpha: 1))
                 
             } else {
-                cell.backgroundColor = UIColor.white
+                cell.contentView.backgroundColor = UIColor.white
             }
             
          return cell
@@ -118,7 +118,7 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     }
     
     @objc func addToFavourite(sender: UIButton) {
-            self.db.collection("favourite").document().setData([
+            self.db.collection("favourite").document(self.products[sender.tag].uid).setData([
                 "userId": Auth.auth().currentUser?.uid ?? "",
                 "productId": self.products[sender.tag].uid,
             ]) { err in

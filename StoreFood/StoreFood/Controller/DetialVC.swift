@@ -44,6 +44,7 @@ class DetailVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     let cakeImage : UIImageView = {
         let img = UIImageView()
         img.clipsToBounds = true
+
       return img
     }()
     
@@ -82,6 +83,7 @@ class DetailVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         view.addSubview(summary)
         view.addSubview(addToCartButton)
 
+//        view.backgroundColor = .white
         view.backgroundColor = .systemBackground
 
 
@@ -96,7 +98,7 @@ class DetailVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         summary.text = cake?.summary
 
         NSLayoutConstraint.activate([
-     
+
         ])
         
         let margins = view.layoutMarginsGuide
@@ -165,18 +167,33 @@ class DetailVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
+    
     func addRate() {
         let alertController = UIAlertController(title: "Add the rate for product from 0 to 5".localized, message: "", preferredStyle: .alert)
-
+//        alertController.addTextField { (textField : UITextField!) -> Void in
+//            textField.placeholder = "التقييم"
+//        }
         let saveAction = UIAlertAction(title: "Save".localized, style: .default, handler: { alert -> Void in
             let firstTextField = alertController.textFields![0] as UITextField
-
-            
+  
             self.db.collection("products").document(self.cake?.uid ?? "").setData([
                 "rate" : firstTextField.text ?? "",
             ], merge: true)
         })
         
-    }
-}
+        let cancelAction = UIAlertAction(title: "Cancel".localized, style: .default, handler: { (action : UIAlertAction!) -> Void in })
+        
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "التقييم"
+        }
 
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    
+     
+    
+}

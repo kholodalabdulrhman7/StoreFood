@@ -58,8 +58,6 @@ class CollectionCell: UICollectionViewCell {
         pr.font  = UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: 16, weight: .regular))
         pr.numberOfLines = 1
         pr.translatesAutoresizingMaskIntoConstraints = false
-
-//        pr.textAlignment = .center
         return pr
     }()
     

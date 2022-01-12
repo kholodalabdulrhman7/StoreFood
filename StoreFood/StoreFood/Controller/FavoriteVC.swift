@@ -170,7 +170,7 @@ class FavouriteViewController: UIViewController, UICollectionViewDelegate, UICol
     private func deleteCartProduct(uid: String) {
 
         db.collection("favourite").document(uid).delete()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() ) {
             self.getCartProducts()
         }
     }
@@ -201,6 +201,7 @@ class FavouriteViewController: UIViewController, UICollectionViewDelegate, UICol
                 if ids.count > 0 {
                     self.getProducts(ids: ids)
                 }else {
+                    self.collectionView.reloadData()
                     self.hud.dismiss()
                 }
 

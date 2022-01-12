@@ -19,8 +19,8 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var tableView = UITableView()
 
-    var menuImages:[String] = ["user", "choices", "language", "support", "color-palette"]
-    var menuNames:[String] = ["Profile".localized, "Orders Number".localized, "Change Language".localized, "Customer Support".localized, "Change appearance".localized]
+    var menuImages:[String] = ["user", "choices", "language","heart", "support", "color-palette"]
+    var menuNames:[String] = ["Profile".localized, "Orders Number".localized, "Change Language".localized,"Favourite", "Customer Support".localized, "Change appearance".localized]
     
     var ordersCount = 0
     
@@ -99,9 +99,12 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         case 2:
             ChangeLanguage()
         case 3:
-            let vc = CustomerSupportViewController()
+            let vc = FavouriteViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         case 4:
+            let vc = CustomerSupportViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        case 5 :
             changeAppearance()
         default:
             break

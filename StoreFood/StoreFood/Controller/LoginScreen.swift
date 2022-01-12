@@ -70,6 +70,13 @@ class LoginScreen: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor (#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) )
         setupViews()
+        #if DEBUG
+        emailTextField.text = "kholod@hotmail.com"
+        passwordTextField.text = "12341234"
+        #endif
+        
+        
+        
     }
     
     private func setupViews() {

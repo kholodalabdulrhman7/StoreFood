@@ -16,9 +16,11 @@ Manager: As manager  I can Update or Delete  the (Categories,products), familes 
 ## Customer stories 
  - AS customer I can show the categries .
  - As customer I can show the Prouct, Price, Cooked by which families.
- - As customer I can add/delete the Product in the cart. 
+ - As customer I can add/delete the Product in the cart.
+ - AS customer I can add prouct  on favorite/rate . 
  - As customer I can Show donate Product .
  - AS customer I can communicate with the Customer Services.
+ 
  
  
  | Component         | Permissions | Behavuior 
