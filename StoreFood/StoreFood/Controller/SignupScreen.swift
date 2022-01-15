@@ -80,14 +80,14 @@ class SignupScreen: UIViewController {
     }
     
     
-    @objc func tapChooseMenuItem(_ sender: UIButton) {//3
+    @objc func tapChooseMenuItem(_ sender: UIButton) {
         dropDown.dataSource = [NSLocalizedString("Customer", comment: ""), NSLocalizedString("Manager", comment: "")]//4
-      dropDown.anchorView = sender //5
-      dropDown.bottomOffset = CGPoint(x: 0, y: sender.frame.size.height) //6
+      dropDown.anchorView = sender
+      dropDown.bottomOffset = CGPoint(x: 0, y: sender.frame.size.height)
       dropDown.show() //7
         
         
-      dropDown.selectionAction = {  (index: Int, item: String) in //8
+      dropDown.selectionAction = {  (index: Int, item: String) in
        
         sender.setTitle(item, for: .normal)
           

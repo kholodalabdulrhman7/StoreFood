@@ -60,5 +60,7 @@ auth.logout()
 
 
 ## Slides
-Repository link:
-presentation link:https://github.com/kholodalabdulrhman7/StoreFood https://docs.google.com/presentation/d/1-xpfdDpJRMO0-aUczouSwL1cFzWgkms_BzwZgFn1MkI/edit?usp=sharing
+*Repositorylink: https://github.com/kholodalabdulrhman7/StoreFood
+
+*presentationlink: https://docs.google.com/presentation/d/1-xpfdDpJRMO0-aUczouSwL1cFzWgkms_BzwZgFn1MkI/edit?usp=sharing
+ 

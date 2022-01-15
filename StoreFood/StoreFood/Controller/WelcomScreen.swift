@@ -13,6 +13,7 @@ class WelcomeScreen: UIViewController {
     let containerView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(#colorLiteral(red: 0.6816496253, green: 0.8040371537, blue: 0.8295541406, alpha: 1))
+
         view.layer.borderWidth = 0.25
         view.layer.borderColor = UIColor.white.cgColor
         view.layer.cornerRadius = 20
@@ -66,7 +67,7 @@ class WelcomeScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor (#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) )
+        view.backgroundColor =  UIColor (#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) )
         
         setupViews()
     }
