@@ -20,6 +20,9 @@ class StoreTabBar: UITabBarController {
             barItem(tabBarTitle:"Settings".localized, tabBarImage: UIImage(systemName: "text.badge.plus")!.withTintColor(UIColor( #colorLiteral(red: 0.1595600843, green: 0.810018003, blue: 0.7768369317, alpha: 1)), renderingMode: .alwaysOriginal), viewController: Showstore()),
             
             
+                barItem(tabBarTitle:"Video", tabBarImage: UIImage(systemName: "video.bubble.left.fill")!.withTintColor(UIColor( #colorLiteral(red: 0.1595600843, green: 0.810018003, blue: 0.7768369317, alpha: 1) ), renderingMode: .alwaysOriginal), viewController:TikTok()),
+                
+
             barItem(tabBarTitle:"Donate".localized, tabBarImage: UIImage(systemName: "dollarsign.square.fill")!.withTintColor(UIColor( #colorLiteral(red: 0.1595600843, green: 0.810018003, blue: 0.7768369317, alpha: 1) ), renderingMode: .alwaysOriginal), viewController:DonateViewController()),
             
             barItem(tabBarTitle:"Cart".localized, tabBarImage: UIImage(systemName: "cart")!.withTintColor(UIColor( #colorLiteral(red: 0.1595600843, green: 0.810018003, blue: 0.7768369317, alpha: 1)), renderingMode: .alwaysOriginal), viewController:CartViewController()),

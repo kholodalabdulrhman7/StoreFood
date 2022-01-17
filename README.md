@@ -12,14 +12,17 @@ Store-Food-app: An application that allows productive families to display and se
 ## Manager stories 
 Manager: As a manager  I can Add the (Categories,products), familes proudctive ,price ,and  add the proudct either in sale or donate page.
 Manager: As manager  I can Update or Delete  the (Categories,products), familes proudctive ,price ,and  add the proudct either in sale or donate page.
+Manger:As manager I can add The Reality Video For  familes proudctive .
 
 ## Customer stories 
  - AS customer I can show the categries .
  - As customer I can show the Prouct, Price, Cooked by which families.
+ -As customer I can show the Reality Video .
  - As customer I can add/delete the Product in the cart.
  - AS customer I can add prouct  on favorite/rate . 
  - As customer I can Show donate Product .
  - AS customer I can communicate with the Customer Services.
+ -
  
  
  
@@ -49,10 +52,11 @@ Manager: As manager  I can Update or Delete  the (Categories,products), familes 
 *  CustomerSupportVC.
 
 ## Service
-##### Auth Service
-auth.login(user)
-auth.signup(user)
-auth.logout()
+#Auth Service:
+
+ *auth.login(user)
+ *auth.signup(user)
+ *auth.logout()
 
 ## Models
 * Model 

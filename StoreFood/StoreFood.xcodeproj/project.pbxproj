@@ -13,6 +13,12 @@
 		7A8C8BC5277853A1006A9DC6 /* CategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C8BC4277853A1006A9DC6 /* CategoryCollectionCell.swift */; };
 		7A8C8BC7277853FF006A9DC6 /* TVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C8BC6277853FF006A9DC6 /* TVCell.swift */; };
 		7A8C8BC92778548D006A9DC6 /* AddProudctVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C8BC82778548D006A9DC6 /* AddProudctVC.swift */; };
+		7A8D703D2795FA7C00E9E7B5 /* TikTokVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8D703C2795FA7C00E9E7B5 /* TikTokVC.swift */; };
+		7A8D703F2795FAB200E9E7B5 /* TikTokCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8D703E2795FAB200E9E7B5 /* TikTokCell.swift */; };
+		7A8D70442795FC5400E9E7B5 /* video.mov in Resources */ = {isa = PBXBuildFile; fileRef = 7A8D70432795FC5400E9E7B5 /* video.mov */; };
+		7A8D70462795FC6C00E9E7B5 /* video2.mov in Resources */ = {isa = PBXBuildFile; fileRef = 7A8D70452795FC6C00E9E7B5 /* video2.mov */; };
+		7A8D70482795FC7600E9E7B5 /* video3.mov in Resources */ = {isa = PBXBuildFile; fileRef = 7A8D70472795FC7600E9E7B5 /* video3.mov */; };
+		7A8D704A2795FC8700E9E7B5 /* video4.mov in Resources */ = {isa = PBXBuildFile; fileRef = 7A8D70492795FC8700E9E7B5 /* video4.mov */; };
 		7A93AFF2278CBA2400A20C4C /* FavoriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A93AFF1278CBA2400A20C4C /* FavoriteVC.swift */; };
 		7AAECA4427799A7F00344295 /* ClassChooseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAECA4327799A7F00344295 /* ClassChooseButton.swift */; };
 		7AAECA482779AA7A00344295 /* MenueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAECA472779AA7A00344295 /* MenueVC.swift */; };
@@ -46,6 +52,12 @@
 		7A8C8BC4277853A1006A9DC6 /* CategoryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionCell.swift; sourceTree = "<group>"; };
 		7A8C8BC6277853FF006A9DC6 /* TVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCell.swift; sourceTree = "<group>"; };
 		7A8C8BC82778548D006A9DC6 /* AddProudctVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProudctVC.swift; sourceTree = "<group>"; };
+		7A8D703C2795FA7C00E9E7B5 /* TikTokVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokVC.swift; sourceTree = "<group>"; };
+		7A8D703E2795FAB200E9E7B5 /* TikTokCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokCell.swift; sourceTree = "<group>"; };
+		7A8D70432795FC5400E9E7B5 /* video.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video.mov; sourceTree = "<group>"; };
+		7A8D70452795FC6C00E9E7B5 /* video2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video2.mov; sourceTree = "<group>"; };
+		7A8D70472795FC7600E9E7B5 /* video3.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video3.mov; sourceTree = "<group>"; };
+		7A8D70492795FC8700E9E7B5 /* video4.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video4.mov; sourceTree = "<group>"; };
 		7A93AFF1278CBA2400A20C4C /* FavoriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVC.swift; sourceTree = "<group>"; };
 		7AAECA4327799A7F00344295 /* ClassChooseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassChooseButton.swift; sourceTree = "<group>"; };
 		7AAECA472779AA7A00344295 /* MenueVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenueVC.swift; sourceTree = "<group>"; };
@@ -88,6 +100,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A8D70422795FC4500E9E7B5 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				7A8D70432795FC5400E9E7B5 /* video.mov */,
+				7A8D70452795FC6C00E9E7B5 /* video2.mov */,
+				7A8D70472795FC7600E9E7B5 /* video3.mov */,
+				7A8D70492795FC8700E9E7B5 /* video4.mov */,
+			);
+			path = Videos;
+			sourceTree = "<group>";
+		};
 		7ADC16A8277460A200BAC296 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +132,7 @@
 		7ADC16B3277460A300BAC296 /* StoreFood */ = {
 			isa = PBXGroup;
 			children = (
+				7A8D70422795FC4500E9E7B5 /* Videos */,
 				7ADC16D5277490EE00BAC296 /* Controller */,
 				7ADC16D4277490A100BAC296 /* Models */,
 				7ADC16D32774903700BAC296 /* Views */,
@@ -139,6 +163,7 @@
 				7A8C8BC4277853A1006A9DC6 /* CategoryCollectionCell.swift */,
 				7A8C8BC6277853FF006A9DC6 /* TVCell.swift */,
 				7AB38F71277B42C100A52B8D /* MenuTableCell.swift */,
+				7A8D703E2795FAB200E9E7B5 /* TikTokCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -170,6 +195,7 @@
 				7AAECA472779AA7A00344295 /* MenueVC.swift */,
 				7AAECA492779AAD800344295 /* CustomerSupportVC.swift */,
 				7A93AFF1278CBA2400A20C4C /* FavoriteVC.swift */,
+				7A8D703C2795FA7C00E9E7B5 /* TikTokVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -252,9 +278,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A8D70482795FC7600E9E7B5 /* video3.mov in Resources */,
 				7ADC16C1277460AA00BAC296 /* LaunchScreen.storyboard in Resources */,
+				7A8D70462795FC6C00E9E7B5 /* video2.mov in Resources */,
 				7ADC16C9277461E300BAC296 /* GoogleService-Info.plist in Resources */,
 				7ADC16BE277460AA00BAC296 /* Assets.xcassets in Resources */,
+				7A8D704A2795FC8700E9E7B5 /* video4.mov in Resources */,
+				7A8D70442795FC5400E9E7B5 /* video.mov in Resources */,
 				7AC8F4D0277CEFD00062E2FE /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,6 +346,7 @@
 				7A8C8BC7277853FF006A9DC6 /* TVCell.swift in Sources */,
 				7AAECA4427799A7F00344295 /* ClassChooseButton.swift in Sources */,
 				7ADC16CF2774892B00BAC296 /* SignupScreen.swift in Sources */,
+				7A8D703D2795FA7C00E9E7B5 /* TikTokVC.swift in Sources */,
 				7AC95DCB27760E1700634655 /* ShowStoreVC.swift in Sources */,
 				7AAECA482779AA7A00344295 /* MenueVC.swift in Sources */,
 				7AC95DCF27760E6300634655 /* DonateVC.swift in Sources */,
@@ -326,6 +357,7 @@
 				7A8C8BC327785279006A9DC6 /* CollectionCell.swift in Sources */,
 				7ADC16B5277460A300BAC296 /* AppDelegate.swift in Sources */,
 				7A8C8BC5277853A1006A9DC6 /* CategoryCollectionCell.swift in Sources */,
+				7A8D703F2795FAB200E9E7B5 /* TikTokCell.swift in Sources */,
 				7ADC16B7277460A300BAC296 /* SceneDelegate.swift in Sources */,
 				7AC95DC927760DEA00634655 /* StoreTabBarVC.swift in Sources */,
 				7AAECA4A2779AAD800344295 /* CustomerSupportVC.swift in Sources */,
