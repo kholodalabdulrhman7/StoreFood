@@ -20,7 +20,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     var tableView = UITableView()
 
     var menuImages:[String] = ["user", "choices", "language","heart", "support", "color-palette"]
-    var menuNames:[String] = ["Profile".localized, "Orders Number".localized, "Change Language".localized,"Favourite", "Customer Support".localized, "Change appearance".localized]
+    var menuNames:[String] = ["Profile".localized, "Orders Number".localized, "Change Language".localized,"Favourite".localized, "Customer Support".localized, "Change appearance".localized]
     
     var ordersCount = 0
     

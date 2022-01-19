@@ -34,7 +34,7 @@ class WelcomeScreen: UIViewController {
       let title = UILabel()
         title.backgroundColor = .clear
         title.text = NSLocalizedString( "Welcome", comment: "")
-        title.font = UIFont.systemFont(ofSize: 29, weight: .bold)
+        title.font = UIFont.systemFont(ofSize: 29, weight: .heavy)
         title.textColor = .black
         title.textAlignment = .center
         title.numberOfLines = 0
@@ -44,8 +44,8 @@ class WelcomeScreen: UIViewController {
     let subTitle: UILabel = {
       let subTitle = UILabel()
         subTitle.backgroundColor = .clear
-        subTitle.text = NSLocalizedString("From Saudi hands To saudi ", comment: "")
-        subTitle.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+        subTitle.text = NSLocalizedString("🇸🇦From Saudi Hands To Saudi🇸🇦", comment: "")
+        subTitle.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         subTitle.textColor = UIColor( #colorLiteral(red: 0.05837889761, green: 0.04676074535, blue: 0.0519445911, alpha: 1))
         subTitle.textAlignment = .center
         subTitle.numberOfLines = 0

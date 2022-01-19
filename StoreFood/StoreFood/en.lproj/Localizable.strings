@@ -10,7 +10,7 @@
 
 "Log in" = "Log in" ;
 "Welcome" =  "Welcome" ;
-"From Saudi hands To saudi " = "From Saudi hands To saudi ";
+"From Saudi Hands To Saudi " = "From Saudi Hands To Saudi ";
 "Sign up" = "Sign up" ;
 "Creating an account." = "Creating an account." ;
 "Create account" = "Create account" ;
@@ -32,7 +32,7 @@
 "OK" = "OK" ;
 "please make sure name, email and password are not empty." = "please make sure name, email and password are not empty." ;
 "email Already in use" = "email Already in use" ;
-"Change language" = "Change language";
+"Change Language" = "Change Language";
 "Choose adding type" = "Choose adding type" ;
 "Add Category" = "Add Category" ;
 "Add Product" = "Add Product" ;
@@ -45,10 +45,11 @@
 "Do you whant to change language to Arabic" = "Do you whant to change language to Arabic" ;
 "Orders Number" = "Orders Number" ;
 "Customer Support"= "Customer Support";
+"Favourite" = "Favourite" ;
  "Change appearance" = "Change appearance" ;
 "Settings"= "Settings";
 "Yes" = "Yes" ;
-" Search..." = " Search..." ;
+"Search..."="Search..." ;
 "Select Image" = "Select Image";
 "Sign out" = "Sign out" ;
 "Send Message" = "Send Message" ;

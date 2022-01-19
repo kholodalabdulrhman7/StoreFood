@@ -10,7 +10,7 @@
 
 "Log in" = " تسجيل دخول " ;
 "Welcome" = "مرحبا" ;
-"From Saudi hands To saudi " =  "من أيادي سعودية لسعوديين";
+"From Saudi Hands To Saudi " =  "من أيادي سعودية لسعوديين";
 "Sign up" = "تسجيل جديد" ;
 "Creating an account." = "إنشاء حساب جديد ";
 "Create account" = "إنشاء حساب ";
@@ -32,10 +32,10 @@
 "OK" = "حسنا";
 "please make sure name, email and password are not empty." = "يرجى التأكد من أن الاسم والبريد الإلكتروني وكلمة المرور ليست فارغة.";
 "email Already in use" = "البريد الاليكتروني قيد الاستخدام";
-"Change language" = "تغيير اللغة" ;
+"Change Language" = "تغيير اللغة" ;
 "Choose adding type" = "اختر النوع";
 "Add Category" = "إضافة فئة";
-"Add Product" = "أضف منتج";
+"Add Product" = "إضافة منتج";
 "Sorry, There is no products" = "عذرا ، لا توجد منتجات" ;
 "Loading" = "جار التحميل";
 "Customer Support" = "دعم العملاء" ;
@@ -47,10 +47,10 @@
 "Change appearance" = "تغيير المظهر ";
 "Settings" = "الإعدادت";
 "Yes" = "موافق";
-" Search..." = "ابحث";
+"Search..." = "ابحث";
 "Select Image" = "اختر الصورة";
 "Sign out" = "تسجيل الخروج" ;
 "Send Message" = "أرسل الرسالة" ;
-
+"Favourite"="المفضلة";
 
 

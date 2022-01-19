@@ -18,7 +18,6 @@
 		7A8D70442795FC5400E9E7B5 /* video.mov in Resources */ = {isa = PBXBuildFile; fileRef = 7A8D70432795FC5400E9E7B5 /* video.mov */; };
 		7A8D70462795FC6C00E9E7B5 /* video2.mov in Resources */ = {isa = PBXBuildFile; fileRef = 7A8D70452795FC6C00E9E7B5 /* video2.mov */; };
 		7A8D70482795FC7600E9E7B5 /* video3.mov in Resources */ = {isa = PBXBuildFile; fileRef = 7A8D70472795FC7600E9E7B5 /* video3.mov */; };
-		7A8D704A2795FC8700E9E7B5 /* video4.mov in Resources */ = {isa = PBXBuildFile; fileRef = 7A8D70492795FC8700E9E7B5 /* video4.mov */; };
 		7A93AFF2278CBA2400A20C4C /* FavoriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A93AFF1278CBA2400A20C4C /* FavoriteVC.swift */; };
 		7AAECA4427799A7F00344295 /* ClassChooseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAECA4327799A7F00344295 /* ClassChooseButton.swift */; };
 		7AAECA482779AA7A00344295 /* MenueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAECA472779AA7A00344295 /* MenueVC.swift */; };
@@ -41,6 +40,8 @@
 		7ADC16CD277487E900BAC296 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADC16CC277487E900BAC296 /* LoginScreen.swift */; };
 		7ADC16CF2774892B00BAC296 /* SignupScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADC16CE2774892B00BAC296 /* SignupScreen.swift */; };
 		7ADC16D127748E5400BAC296 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADC16D027748E5400BAC296 /* Model.swift */; };
+		7AE3A19827987DEC002D70E7 /* video5.mov in Resources */ = {isa = PBXBuildFile; fileRef = 7AE3A19727987DEC002D70E7 /* video5.mov */; };
+		7AE3A19A2798800D002D70E7 /* video4.mov in Resources */ = {isa = PBXBuildFile; fileRef = 7AE3A1992798800D002D70E7 /* video4.mov */; };
 		C3347368AE25514470C1B58F /* Pods_StoreFood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FECE3476DE78C4C010953F93 /* Pods_StoreFood.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +58,6 @@
 		7A8D70432795FC5400E9E7B5 /* video.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video.mov; sourceTree = "<group>"; };
 		7A8D70452795FC6C00E9E7B5 /* video2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video2.mov; sourceTree = "<group>"; };
 		7A8D70472795FC7600E9E7B5 /* video3.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video3.mov; sourceTree = "<group>"; };
-		7A8D70492795FC8700E9E7B5 /* video4.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video4.mov; sourceTree = "<group>"; };
 		7A93AFF1278CBA2400A20C4C /* FavoriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVC.swift; sourceTree = "<group>"; };
 		7AAECA4327799A7F00344295 /* ClassChooseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassChooseButton.swift; sourceTree = "<group>"; };
 		7AAECA472779AA7A00344295 /* MenueVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenueVC.swift; sourceTree = "<group>"; };
@@ -84,6 +84,8 @@
 		7ADC16CC277487E900BAC296 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		7ADC16CE2774892B00BAC296 /* SignupScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupScreen.swift; sourceTree = "<group>"; };
 		7ADC16D027748E5400BAC296 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		7AE3A19727987DEC002D70E7 /* video5.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video5.mov; sourceTree = "<group>"; };
+		7AE3A1992798800D002D70E7 /* video4.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video4.mov; sourceTree = "<group>"; };
 		FD688ECE728B5264EB569C74 /* Pods-StoreFood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoreFood.release.xcconfig"; path = "Target Support Files/Pods-StoreFood/Pods-StoreFood.release.xcconfig"; sourceTree = "<group>"; };
 		FECE3476DE78C4C010953F93 /* Pods_StoreFood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StoreFood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -106,7 +108,8 @@
 				7A8D70432795FC5400E9E7B5 /* video.mov */,
 				7A8D70452795FC6C00E9E7B5 /* video2.mov */,
 				7A8D70472795FC7600E9E7B5 /* video3.mov */,
-				7A8D70492795FC8700E9E7B5 /* video4.mov */,
+				7AE3A1992798800D002D70E7 /* video4.mov */,
+				7AE3A19727987DEC002D70E7 /* video5.mov */,
 			);
 			path = Videos;
 			sourceTree = "<group>";
@@ -278,12 +281,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AE3A19A2798800D002D70E7 /* video4.mov in Resources */,
 				7A8D70482795FC7600E9E7B5 /* video3.mov in Resources */,
 				7ADC16C1277460AA00BAC296 /* LaunchScreen.storyboard in Resources */,
+				7AE3A19827987DEC002D70E7 /* video5.mov in Resources */,
 				7A8D70462795FC6C00E9E7B5 /* video2.mov in Resources */,
 				7ADC16C9277461E300BAC296 /* GoogleService-Info.plist in Resources */,
 				7ADC16BE277460AA00BAC296 /* Assets.xcassets in Resources */,
-				7A8D704A2795FC8700E9E7B5 /* video4.mov in Resources */,
 				7A8D70442795FC5400E9E7B5 /* video.mov in Resources */,
 				7AC8F4D0277CEFD00062E2FE /* Localizable.strings in Resources */,
 			);

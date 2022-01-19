@@ -115,9 +115,6 @@ class FavouriteViewController: UIViewController, UICollectionViewDelegate, UICol
             configureCollectionView()
             
             view.backgroundColor = UIColor.systemGray6
-//            self.navigationItem.largeTitleDisplayMode = .always
-            
-//            self.collectionView.reloadData()
             print(cartArr.count)
         }
     

@@ -316,14 +316,14 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
     
     }
     
-    @objc func tapChooseMenuItem(_ sender: UIButton) {//3
+    @objc func tapChooseMenuItem(_ sender: UIButton) {
         dropDown.dataSource = [NSLocalizedString("Sale", comment: ""), NSLocalizedString("Donate", comment: "")]//4
       dropDown.anchorView = sender //5
-      dropDown.bottomOffset = CGPoint(x: 0, y: sender.frame.size.height) //6
+      dropDown.bottomOffset = CGPoint(x: 0, y: sender.frame.size.height)
       dropDown.show() //7
         
         
-      dropDown.selectionAction = {  (index: Int, item: String) in //8
+      dropDown.selectionAction = {  (index: Int, item: String) in
        
         sender.setTitle(item, for: .normal)
           
@@ -332,15 +332,15 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
       }
     }
     
-    @objc func tapChooseCategory(_ sender: UIButton) {//3
+    @objc func tapChooseCategory(_ sender: UIButton) {
        
         dropDown.dataSource = self.categories.map({$0.name})
-        dropDown.anchorView = sender //5
-        dropDown.bottomOffset = CGPoint(x: 0, y: sender.frame.size.height) //6
-        dropDown.show() //7
+        dropDown.anchorView = sender
+        dropDown.bottomOffset = CGPoint(x: 0, y: sender.frame.size.height)
+        dropDown.show()
         
         
-        dropDown.selectionAction = {  (index: Int, item: String) in //8
+        dropDown.selectionAction = {  (index: Int, item: String) in 
             
             sender.setTitle(item, for: .normal)
             

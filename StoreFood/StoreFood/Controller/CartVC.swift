@@ -48,9 +48,7 @@ class CartViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         
         alert.addAction(UIAlertAction(title: "نعم", style: UIAlertAction.Style.default, handler: { action in
-            
-//            self.productsData.remove(at: sender.tag)
-//            self.collectionView.reloadData()
+           
             self.deleteCartProduct(uid: self.docIds[sender.tag])
         }))
         
@@ -96,9 +94,6 @@ class CartViewController: UIViewController, UICollectionViewDelegate, UICollecti
             configureCollectionView()
             
             view.backgroundColor = UIColor.systemGray6
-//            self.navigationItem.largeTitleDisplayMode = .always
-            
-//            self.collectionView.reloadData()
             print(cartArr.count)
         }
     
@@ -149,13 +144,6 @@ class CartViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
 
     private func deleteCartProduct(uid: String) {
-//       db.collection("cart").whereField("productId", isEqualTo: uid).getDocuments { snapshot, err in
-//           for document in snapshot!.documents {
-//               document.reference.delete()
-//           }
-//           self.getCartProducts()
-//
-//        }
         db.collection("cart").document(uid).delete()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.getCartProducts()

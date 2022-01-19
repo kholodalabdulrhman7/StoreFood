@@ -23,15 +23,15 @@ class TikTok: UIViewController {
     view.backgroundColor = .white
     // Do any additional setup after loading the view.
     for _ in 0..<1{
-      let model = VideoModel(caption: "Mona.Kiitchen",
-                  username: "@Mona",
+      let model = VideoModel(caption: "Ahlam.Kiitchen",
+                  username: "@Ahlam",
                   audioTrackName: "Video Song :musical_note:",
                   videoFileName: "video",
                   videoFileFormat: "mov")
       data.append (model)
     }
     for _ in 1..<2 {
-      let model = VideoModel(caption: "RedfelvateCake",
+      let model = VideoModel(caption: "RoseCake",
                   username: "@Ahlam",
                   audioTrackName: "Video Song :musical_note:",
                   videoFileName: "video2",
@@ -39,29 +39,29 @@ class TikTok: UIViewController {
       data.append (model)
     }
     for _ in 2..<3 {
-      let model = VideoModel(caption: "RoseCake",
+      let model = VideoModel(caption: "SweetFrench",
                   username: "@Mema80",
                   audioTrackName: "Video Song :musical_note:",
                   videoFileName: "video3",
                   videoFileFormat: "mov")
       data.append (model)
     }
-//    for _ in 3..<4 {
-//      let model = VideoModel(caption: "food AD",
-//                  username: "@Sara",
-//                  audioTrackName: "Video Song :musical_note:",
-//                  videoFileName: "video4",
-//                  videoFileFormat: "mp4")
-//      data.append (model)
-//    }
-//    for _ in 4..<5 {
-//      let model = VideoModel(caption: "s AD",
-//                  username: "@Sara",
-//                  audioTrackName: "Video Song :musical_note:",
-//                  videoFileName: "video5",
-//                  videoFileFormat: "mp4")
-//      data.append (model)
-//    }
+    for _ in 3..<4 {
+      let model = VideoModel(caption: "PanCake",
+                  username: "@Evan_Sweet",
+                  audioTrackName: "Video Song :musical_note:",
+                  videoFileName: "video4",
+                  videoFileFormat: "mov")
+      data.append (model)
+    }
+    for _ in 4..<5 {
+      let model = VideoModel(caption: "Bakery",
+                  username: "@Ansan.zaud",
+                  audioTrackName: "Video Song :musical_note:",
+                  videoFileName: "video5",
+                  videoFileFormat: "mov")
+      data.append (model)
+    }
 //    for _ in 5..<6 {
 //      let model = VideoModel(caption: "Abyat AD",
 //                  username: "@Sara",
@@ -162,15 +162,6 @@ extension TikTok: UICollectionViewDataSource, UICollectionViewDelegate{
         videoCell.player?.pause()
         videoCell.isPlaying = false
         
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VideoCollectionViewCell.identifier, for: indexPath) as! VideoCollectionViewCell
-//
-//        if let player = cell.player {
-////            if player.rate != 0 {
-//                // Pause the player
-//                player.pause()
-////            }
-//
-//        }
     }
     
     

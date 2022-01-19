@@ -86,15 +86,6 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        if collectionView == CategoriesCollectionViewCell {
-//            Ret
-//        } else {
-//
-//        }
-//    }
-
-    
     @objc func deleteProduct(sender: UIButton) {
         let alert = UIAlertController(title: "تحذير", message: "هل أنت متأكد من حذف المنتج ؟", preferredStyle: UIAlertController.Style.alert)
         
@@ -176,7 +167,6 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         if #available(iOS 15, *) {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
-            //                    appearance.backgroundColor = < your tint color >
             navigationController?.navigationBar.standardAppearance = appearance;
             navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
         }
@@ -198,7 +188,7 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         self.navigationItem.largeTitleDisplayMode = .always
         
         searchBar.searchBarStyle = UISearchBar.Style.default
-        searchBar.placeholder = " Search..."
+        searchBar.placeholder = " Search...".localized
         searchBar.sizeToFit()
         searchBar.isTranslucent = false
         searchBar.backgroundImage = UIImage()
@@ -391,16 +381,6 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         }
     
     private func CategoriesLayout() -> UICollectionViewFlowLayout{
-//        let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
-//
-//        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
-//
-//        let group = NSCollectionLayoutGroup.vertical(layoutSize: NSCollectionLayoutSize(
-//            widthDimension: .fractionalWidth(1),
-//            heightDimension: .estimated(50)),subitems: [item])
-//
-//        let section = NSCollectionLayoutSection(group: group)
-     
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 130, height: 40)
         layout.scrollDirection = .horizontal
@@ -411,7 +391,7 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     func showAddTypePicker(_ sender: UIBarButtonItem) {
      
-        ActionSheetStringPicker.show(withTitle: "Choose adding type", rows: ["Add Category", "Add Product"], initialSelection: 0, doneBlock: { picker, index, values in
+        ActionSheetStringPicker.show(withTitle: "Choose adding type".localized, rows: ["Add Category".localized, "Add Product".localized], initialSelection: 0, doneBlock: { picker, index, values in
           
             if index == 0 {
                 let vc = AddCategoryViewController()
@@ -429,7 +409,7 @@ class Showstore: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     func showEmptyText(isShow: Bool) {
         let emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
-              emptyLabel.text = "Sorry, There is no products"
+        emptyLabel.text = "Sorry, There is no products".localized
         emptyLabel.textAlignment = .center
         
         if isShow {

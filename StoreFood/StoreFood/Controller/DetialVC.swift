@@ -82,8 +82,7 @@ class DetailVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         view.addSubview(name)
         view.addSubview(summary)
         view.addSubview(addToCartButton)
-
-//        view.backgroundColor = .white
+        
         view.backgroundColor = .systemBackground
 
 
@@ -170,9 +169,7 @@ class DetailVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
     func addRate() {
         let alertController = UIAlertController(title: "Add the rate for product from 0 to 5".localized, message: "", preferredStyle: .alert)
-//        alertController.addTextField { (textField : UITextField!) -> Void in
-//            textField.placeholder = "التقييم"
-//        }
+
         let saveAction = UIAlertAction(title: "Save".localized, style: .default, handler: { alert -> Void in
             let firstTextField = alertController.textFields![0] as UITextField
   
