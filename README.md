@@ -35,6 +35,7 @@ Manger:As manager I can add The Reality Video For  familes proudctive .
 | Cart page         |Customer only|Buy the proudct and display the alert how much the time needed to finalize the order.|
 |donate page        |customer/Manger|the products added by the Manager and diplayed by the customer|
 | SettingPage       |customer/Manger | Change the profile page,display how many orders on the app, Change the app language , change apperance(dark/light) and communicate to Customer Service.
+|TikTokVC.          |customer/Manger |Show the proudct using fauters TikTok (Reality Video)
 
 ## Components:
 *  WelcomScreen. 
@@ -50,6 +51,7 @@ Manger:As manager I can add The Reality Video For  familes proudctive .
 *  AddProudctVC.
 *  MenueVC.
 *  CustomerSupportVC.
+*TikTokVC.
 
 ## Service
 #Auth Service:
