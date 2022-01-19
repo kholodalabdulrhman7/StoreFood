@@ -51,7 +51,7 @@ Manger:As manager I can add The Reality Video For  familes proudctive .
 *  AddProudctVC.
 *  MenueVC.
 *  CustomerSupportVC.
-*TikTokVC.
+*  TikTokVC.
 
 ## Service
 #Auth Service:
