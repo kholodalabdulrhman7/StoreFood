@@ -15,7 +15,6 @@
 		7A8C8BC92778548D006A9DC6 /* AddProudctVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C8BC82778548D006A9DC6 /* AddProudctVC.swift */; };
 		7A8D703D2795FA7C00E9E7B5 /* TikTokVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8D703C2795FA7C00E9E7B5 /* TikTokVC.swift */; };
 		7A8D703F2795FAB200E9E7B5 /* TikTokCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8D703E2795FAB200E9E7B5 /* TikTokCell.swift */; };
-		7A8D70442795FC5400E9E7B5 /* video.mov in Resources */ = {isa = PBXBuildFile; fileRef = 7A8D70432795FC5400E9E7B5 /* video.mov */; };
 		7A8D70462795FC6C00E9E7B5 /* video2.mov in Resources */ = {isa = PBXBuildFile; fileRef = 7A8D70452795FC6C00E9E7B5 /* video2.mov */; };
 		7A8D70482795FC7600E9E7B5 /* video3.mov in Resources */ = {isa = PBXBuildFile; fileRef = 7A8D70472795FC7600E9E7B5 /* video3.mov */; };
 		7A93AFF2278CBA2400A20C4C /* FavoriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A93AFF1278CBA2400A20C4C /* FavoriteVC.swift */; };
@@ -42,6 +41,7 @@
 		7ADC16D127748E5400BAC296 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADC16D027748E5400BAC296 /* Model.swift */; };
 		7AE3A19827987DEC002D70E7 /* video5.mov in Resources */ = {isa = PBXBuildFile; fileRef = 7AE3A19727987DEC002D70E7 /* video5.mov */; };
 		7AE3A19A2798800D002D70E7 /* video4.mov in Resources */ = {isa = PBXBuildFile; fileRef = 7AE3A1992798800D002D70E7 /* video4.mov */; };
+		7AE3A19E2799598E002D70E7 /* video.mov in Resources */ = {isa = PBXBuildFile; fileRef = 7AE3A19D2799598E002D70E7 /* video.mov */; };
 		C3347368AE25514470C1B58F /* Pods_StoreFood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FECE3476DE78C4C010953F93 /* Pods_StoreFood.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +55,6 @@
 		7A8C8BC82778548D006A9DC6 /* AddProudctVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProudctVC.swift; sourceTree = "<group>"; };
 		7A8D703C2795FA7C00E9E7B5 /* TikTokVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokVC.swift; sourceTree = "<group>"; };
 		7A8D703E2795FAB200E9E7B5 /* TikTokCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokCell.swift; sourceTree = "<group>"; };
-		7A8D70432795FC5400E9E7B5 /* video.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video.mov; sourceTree = "<group>"; };
 		7A8D70452795FC6C00E9E7B5 /* video2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video2.mov; sourceTree = "<group>"; };
 		7A8D70472795FC7600E9E7B5 /* video3.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video3.mov; sourceTree = "<group>"; };
 		7A93AFF1278CBA2400A20C4C /* FavoriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVC.swift; sourceTree = "<group>"; };
@@ -86,6 +85,7 @@
 		7ADC16D027748E5400BAC296 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		7AE3A19727987DEC002D70E7 /* video5.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video5.mov; sourceTree = "<group>"; };
 		7AE3A1992798800D002D70E7 /* video4.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video4.mov; sourceTree = "<group>"; };
+		7AE3A19D2799598E002D70E7 /* video.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video.mov; sourceTree = "<group>"; };
 		FD688ECE728B5264EB569C74 /* Pods-StoreFood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoreFood.release.xcconfig"; path = "Target Support Files/Pods-StoreFood/Pods-StoreFood.release.xcconfig"; sourceTree = "<group>"; };
 		FECE3476DE78C4C010953F93 /* Pods_StoreFood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StoreFood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -105,10 +105,10 @@
 		7A8D70422795FC4500E9E7B5 /* Videos */ = {
 			isa = PBXGroup;
 			children = (
-				7A8D70432795FC5400E9E7B5 /* video.mov */,
 				7A8D70452795FC6C00E9E7B5 /* video2.mov */,
 				7A8D70472795FC7600E9E7B5 /* video3.mov */,
 				7AE3A1992798800D002D70E7 /* video4.mov */,
+				7AE3A19D2799598E002D70E7 /* video.mov */,
 				7AE3A19727987DEC002D70E7 /* video5.mov */,
 			);
 			path = Videos;
@@ -285,10 +285,10 @@
 				7A8D70482795FC7600E9E7B5 /* video3.mov in Resources */,
 				7ADC16C1277460AA00BAC296 /* LaunchScreen.storyboard in Resources */,
 				7AE3A19827987DEC002D70E7 /* video5.mov in Resources */,
+				7AE3A19E2799598E002D70E7 /* video.mov in Resources */,
 				7A8D70462795FC6C00E9E7B5 /* video2.mov in Resources */,
 				7ADC16C9277461E300BAC296 /* GoogleService-Info.plist in Resources */,
 				7ADC16BE277460AA00BAC296 /* Assets.xcassets in Resources */,
-				7A8D70442795FC5400E9E7B5 /* video.mov in Resources */,
 				7AC8F4D0277CEFD00062E2FE /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

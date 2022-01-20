@@ -143,12 +143,6 @@ extension TikTok: UICollectionViewDataSource, UICollectionViewDelegate{
     
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VideoCollectionViewCell.identifier, for: indexPath) as! VideoCollectionViewCell
-//
-//        if let player = cell.player {
-//            player.play()
-//        }
-        
                 guard let videoCell = cell as? VideoCollectionViewCell else { return }
                 videoCell.player?.play()
         videoCell.isPlaying = true
